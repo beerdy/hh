@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Used:</strong>
+  <%= @bonuse.used_id %>
+</p>
+
+<p>
+  <strong>Fio:</strong>
+  <%= @bonuse.fio %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @bonuse.birthday %>
+</p>
+
+<%= link_to 'Edit', edit_bonuse_path(@bonuse) %> |
+<%= link_to 'Back', bonuses_path %>

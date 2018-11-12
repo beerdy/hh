@@ -1,0 +1,32 @@
+<%= form_with(model: bonuse, local: true) do |form| %>
+  <% if bonuse.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bonuse.errors.count, "error") %> prohibited this bonuse from being saved:</h2>
+
+      <ul>
+      <% bonuse.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :used_id %>
+    <%= form.number_field :used_id, id: :bonuse_used_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fio %>
+    <%= form.text_field :fio, id: :bonuse_fio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthday %>
+    <%= form.text_field :birthday, id: :bonuse_birthday %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @message.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @message.description %>
+</p>
+
+<p>
+  <strong>Slave:</strong>
+  <%= @message.slave %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @message.image %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @message.link %>
+</p>
+
+<p>
+  <strong>tag:</strong>
+  <%= @message.tag %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @message.url %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @message.link %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @message.sort %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @message.count %>
+</p>
+
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>

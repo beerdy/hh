@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @history.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @history.description %>
+</p>
+
+<p>
+  <strong>Slave:</strong>
+  <%= @history.slave %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @history.image %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @history.link %>
+</p>
+
+<p>
+  <strong>tag:</strong>
+  <%= @history.tag %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @history.url %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @history.link %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @history.sort %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @history.count %>
+</p>
+
+<%= link_to 'Edit', edit_history_path(@history) %> |
+<%= link_to 'Back', histories_path %>

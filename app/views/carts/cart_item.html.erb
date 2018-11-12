@@ -1,0 +1,52 @@
+<%= form_with(model: @order, local: true) do |form| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this @order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <ul>
+  <% @cart.each_with_index do |cart,index| %>
+    <li><%= "#{cart.product.title} (#{cart.product.description}) - #{cart.product_quantify}шт." %></li>
+    <%= form.hidden_field :products, id: :order_products, type: 'hidden' %>
+    <input id="order_products" type="hidden" value='<%= "#{cart.product_id}_#{cart.product_quantify}" %>' name="product<%=index%>">
+  <% end %>
+  </ul>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :order_title %>
+  </div>
+  
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :order_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :order_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :order_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_area :address, id: :order_address %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+

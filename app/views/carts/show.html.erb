@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @cart.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @cart.description %>
+</p>
+
+<p>
+  <strong>Slave:</strong>
+  <%= @cart.slave %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @cart.image %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @cart.link %>
+</p>
+
+<p>
+  <strong>tag:</strong>
+  <%= @cart.tag %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @cart.url %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @cart.link %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @cart.sort %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @cart.count %>
+</p>
+
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %>

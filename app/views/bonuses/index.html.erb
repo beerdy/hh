@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bonuses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Used</th>
+      <th>Fio</th>
+      <th>Birthday</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bonuses.each do |bonuse| %>
+      <tr>
+        <td><%= bonuse.used_id %></td>
+        <td><%= bonuse.fio %></td>
+        <td><%= bonuse.birthday %></td>
+        <td><%= link_to 'Show', bonuse %></td>
+        <td><%= link_to 'Edit', edit_bonuse_path(bonuse) %></td>
+        <td><%= link_to 'Destroy', bonuse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bonuse', new_bonuse_path %>

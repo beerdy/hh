@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  used_id: 1
+  fio: MyString
+  birthday: MyString
+
+two:
+  used_id: 1
+  fio: MyString
+  birthday: MyString
