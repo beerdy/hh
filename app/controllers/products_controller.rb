@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :set_gallery, only: [:new, :edit, :update]
 
   # GET /products
   # GET /products.json
@@ -41,11 +40,8 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
-    # use prepared model for update
-    product = Product.new(product_params)
-
     respond_to do |format|
-      if @product.update( product_params.merge!({photos: product.photos}) )
+      if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
@@ -70,11 +66,9 @@ class ProductsController < ApplicationController
     def set_product
       @product = Product.find(params[:id])
     end
-    def set_gallery
-      @gallery = Gallery.new
-    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :slave, :image, :link, :tag, :url, :link, :sort, :count, :photos => [])
+      params.require(:product).permit(:title, :description, :slave, :image, :link, :tag, :url, :link, :sort, :count)
     end
 end

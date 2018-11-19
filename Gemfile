@@ -36,9 +36,6 @@ gem 'jquery-ui-rails'
 gem "rails-backbone"
 
 gem 'mongoid', '~> 6.0'
-gem "mongoid-paperclip"
-gem "paperclip"
-
 gem 'bson_ext'
 gem 'devise'
 gem "cancan"

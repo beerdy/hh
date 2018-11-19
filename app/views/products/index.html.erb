@@ -9,7 +9,7 @@
       <th>Title</th>
       <th>Description</th>
       <th>Slave</th>
-      <th>Image preview</th>
+      <th>Image</th>
       <th>Link</th>
       <th>Tags</th>
       <th>Url</th>
@@ -26,7 +26,7 @@
         <td><%= product.title %></td>
         <td><%= product.description %></td>
         <td><%= product.slave %></td>
-        <td><%= image_tag (has_image?(product.photos[0]) ? get_image(product.photos[0]).image.url(:thumb) : 'backgrounds/no-image320x240.png'), width: '100' %></td>
+        <td><%= product.image %></td>
         <td><%= product.link %></td>
         <td><%= product.tag %></td>
         <td><%= product.url %></td>

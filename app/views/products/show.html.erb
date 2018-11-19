@@ -15,20 +15,10 @@
   <%= @product.slave %>
 </p>
 
-
-<% if has_image? @product.photos[0] %>
-  <ul class="product-images">
-    <% @product.photos.each do |meta| %>
-      <li class="item">
-        <div class="meta">meta</div>
-        <%= image_tag get_image(meta).image.url, class: 'img-responsive', width: '320' %>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <%= image_tag 'backgrounds/no-image320x240.png', class: 'img-responsive' %>
-<%end%>
-
+<p>
+  <strong>Image:</strong>
+  <%= @product.image %>
+</p>
 
 <p>
   <strong>Link:</strong>
