@@ -507,12 +507,31 @@ input[type="submit"]:hover, button[type="submit"]:hover, .button:hover{
 			background-size: contain;
 		}
 
+.button{
+	display: block;
+	width:100%;
+	max-width: 300px;
+	padding:10px;
+	background: #f1c854;
+	box-sizing: border-box;
+	margin:auto;
+}
+.button:hover{
+	color:#000;
+}
 @-webkit-keyframes bugfix {
     to {
       padding: 0;
     }
 }
 
+@media screen and (max-width: 480px) {
+
+	.slider-overlay .rest{
+		font-size: 22px;
+		margin-bottom: -100px;
+	}
+}
 @media screen and (max-width: 320px) {
     html,
     body {
