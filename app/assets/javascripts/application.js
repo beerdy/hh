@@ -26,4 +26,10 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/hh
+
+//
+//--- Static libs --///
+//
+//= require dropzone.min
+
 //= require_tree .
