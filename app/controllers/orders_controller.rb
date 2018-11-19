@@ -1,8 +1,8 @@
 class OrdersController < ApplicationController
   include ProductsPrepare
+  
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
-
+  
   # GET /orders
   # GET /orders.json
   def index
@@ -38,9 +38,8 @@ class OrdersController < ApplicationController
     end
   end
 
-  def orders_list
-    @orders = Order.where(user_id: current_user.id)
-    puts 'LIST====================='
+  def order_items
+    
   end
 
   # PATCH/PUT /orders/1
