@@ -2,17 +2,38 @@
 <html>
   <head>
     <title>Hh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <ul class="hmenu">
-      <%= render 'devise/menu/registration_items' %>
-      <%= render 'devise/menu/login_items' %>
-    </ul>
-    <%= yield %>
+    <!-- МЕНЮ -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <label for="nav-toggle" class="nav-toggle-on" onclick></label>
+    <nav class="nav">
+        <label for="nav-toggle" class="nav-toggle-off" onclick></label>
+        <ul>
+            <%= render 'devise/menu/registration_items' %>
+            <%= render 'devise/menu/login_items' %>
+            <li><a href="#1">Меню</a>
+            <li><a href="#2">Новости</a>
+            <li><a href="#3">Забронировать столик</a>
+            <li><a href="#4">Контакты</a>
+            <li><a href="#4">Личный кабинет</a>
+            <li><a href="#4">Корзины</a>
+            <li><a href="#4">Избарнное</a>
+            <li><a href="#4">Выход</a>
+              Моя Корзина: <%= link_to 'Show', cart_item_show_path %><br>
+              Продукты: <%= link_to 'Show', products_path %><br>
+              Новости: <%= link_to 'Show', events_path %><br>
+              Мои заказы: <%= link_to 'Show', orders_path %><br>
+        </ul>
+    </nav>
+    <!-- МЕНЮ ОФФ -->
+    <div class="sections">
+      <%= yield %>
+    </div>
   </body>
 </html>
