@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  slave: MyText
+  url: MyString
+  link: MyString
+  sort: 1
+
+two:
+  title: MyString
+  description: MyText
+  slave: MyText
+  url: MyString
+  link: MyString
+  sort: 1
