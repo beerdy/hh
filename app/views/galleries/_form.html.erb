@@ -1,0 +1,47 @@
+<%= form_with(model: gallery, local: true) do |form| %>
+  <% if gallery.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
+
+      <ul>
+      <% gallery.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :gallery_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :gallery_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slave %>
+    <%= form.text_area :slave, id: :gallery_slave %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url, id: :gallery_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :link %>
+    <%= form.text_field :link, id: :gallery_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sort %>
+    <%= form.number_field :sort, id: :gallery_sort %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

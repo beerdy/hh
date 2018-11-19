@@ -1,6 +1,17 @@
 <h1>Editing Product</h1>
+<% if has_image? @product.photos[0] %>
+  <ul class="product-images">
+    <% @product.photos.each do |meta_mongoid| %>
+      <li class="item">
+        <%= image_tag_paper_mongoid meta_mongoid, class: 'img-responsive', width: '320', id: 'iiii' %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <%= image_tag 'backgrounds/no-image320x240.png', class: 'img-responsive' %>
+<%end%>
 
-<%= render 'form', product: @product %>
+<%= render 'form', product: @product, gallery: @gallery %>
 
 <%= link_to 'Show', @product %> |
 <%= link_to 'Back', products_path %>
