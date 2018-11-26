@@ -1,6 +1,29 @@
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
-Моя Корзина: <%= link_to 'Show', cart_item_show_path %><br>
-Продукты: <%= link_to 'Show', products_path %><br>
-Новости: <%= link_to 'Show', events_path %><br>
-Мои заказы: <%= link_to 'Show', orders_list_show_path %><br>
+<section class="intro">
+	<div class="slider">
+			<div class="slider-overlay">
+				<a href="/" class="logo">
+					<div class="rest">ресторан-пивоварня</div>
+				</a>
+	         <div class="zal">
+	         	<div class="zal-box">
+		    		<a href="/" class="dorado"></a>
+		    		<a href="/" class="bavaria"></a>
+		    	</div>
+	    	</div>
+			</div>
+            <ul class="slidewrapper">
+                <li class="slide" style="background-image:url('/assets/slide1.jpg')"></li>
+				<li class="slide" style="background-image:url('/assets/slide1.jpg')"></li>
+				<li class="slide" style="background-image:url('/assets/slide1.jpg')"></li>
+				<li class="slide" style="background-image:url('/assets/slide1.jpg')"></li>
+            </ul>
+            <div class="prev-next-btns">
+                <div class="prev-btn"></div>
+                <div class="next-btn"></div>
+            </div>
+    </div>
+    <div class="welcome">
+    	<h1><div class="up">Welcome</div>Добро пожаловать в Хмельхаус!</h1>
+    	<a href="/" class="button">Забронировать столик</a>
+    </div>
+</section>
