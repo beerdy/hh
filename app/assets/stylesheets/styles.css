@@ -125,8 +125,7 @@ h2{
 }
 
 h3{
-  font-size: 30px;
-  font-family: "Roboto-Regular";
+  font-size: 18px;
   color: #fff;
   font-weight: bold;
   text-transform: uppercase;
@@ -217,14 +216,133 @@ input[type="submit"]:hover, button[type="submit"]:hover, .button:hover{
     bottom: 0;
     margin: 0;
     left: -360px;
-    padding: 15px 20px;
+    padding: 20px 20px;
     -webkit-transition: left 0.3s;
     -moz-transition: left 0.3s;
     transition: left 0.3s;
-    background: #f1c854;
+    background:#000 url('/assets/bg.jpg') center;
     background-size: cover;
     z-index: 2000;
+    border-right:3px solid #3b2010;
 }
+	.nav:after{
+		content:"";
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    box-shadow: inset -50px 0px 300px rgba(0,0,0,0.5);
+	    z-index: 1;
+	}
+
+	.nav li{
+		position:relative;
+		width:100%;
+		height: 50px;
+		border-bottom: 1px solid rgba(255,255,255,0.2);
+		line-height: 50px;
+		padding:10px 0 10px 0px;
+		z-index: 2;
+	}
+		.nav li.small{
+			border-bottom: 0px solid #b68360;
+		}
+		.nav li.small a{
+			font-size: 14px;
+			font-weight: normal;
+			text-transform: none;
+			letter-spacing: 2px;
+			text-decoration: none;
+			color:#fff;
+			border-bottom: 0px solid #b68360;
+		}
+		.nav li a{
+			display: block;
+			font-size: 16px;
+			line-height: 50px;
+			font-weight: bold;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			text-decoration: none;
+			color:#fff;
+			background-repeat: no-repeat;
+			background-position: left center;
+			background-size: 32px;
+			padding:0px 0 0px 50px;
+		}
+			.nav li.menu a{
+				background-image: url('/assets/ico_menu.svg'); 
+			}
+			.nav li.bron a{
+				background-image: url('/assets/ico_bron.svg'); 
+			}
+			.nav li.news a{
+				background-image: url('/assets/ico_news.svg'); 
+			}
+			.nav li.otziv a{
+				background-image: url('/assets/ico_otziv.svg'); 
+			}
+			.nav li.cont a{
+				background-image: url('/assets/ico_cont.svg'); 
+			}
+			.nav li.user a{
+				background-image: url('/assets/ico_user.svg'); 
+			}
+			.nav li.cart a{
+				background-image: url('/assets/ico_cart.svg'); 
+			}
+			.nav li.logout a{
+				background-image: url('/assets/ico_logout.svg'); 
+			}
+
+		.nav li a:hover{
+			color:#f1c854;
+		}
+
+	.nav li.user{
+		position:relative;
+		width:100%;
+		height: 50px;
+		border-bottom: 0px solid #b68360;
+	}
+		.nav li.user .avatar{
+			position: absolute;
+			top:0;
+			left:0;
+			width:50px;
+			height: 50px;
+			background:#000;
+			float:left;
+			border-radius: 100%;
+		}
+		.nav li.user .name{
+			position: absolute;
+			top:5px;
+			left:0px;
+			width:100%;
+			height: 20px;
+			float:left;
+			padding:0 0 0 60px;
+			box-sizing: border-box;
+			font-size: 16px;
+			line-height: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+		}
+		.nav li.user .phone{
+			position: absolute;
+			top:25px;
+			left:0px;
+			width:100%;
+			height: 25px;
+			float:left;
+			padding:0 0 0 60px;
+			box-sizing: border-box;
+			font-size: 14px;
+			line-height: 25px;
+			letter-spacing: 1px;
+		}
 
 .nav-toggle-on{
     position: absolute;
@@ -246,7 +364,7 @@ input[type="submit"]:hover, button[type="submit"]:hover, .button:hover{
     left: 310px;
     top: 20px;
     padding: 5px;
-    color: #000;
+    color: #fff;
     cursor: pointer;
     font-size: 40px;
     line-height: 1;
@@ -282,10 +400,13 @@ input[type="submit"]:hover, button[type="submit"]:hover, .button:hover{
 
 [id='nav-toggle']:checked ~ .nav {
     left: 0;
-    box-shadow:4px 0px 2000px 0px rgba(0,0,0, 0.9);
-    -moz-box-shadow:4px 0px 2000px 0px rgba(0,0,0, 0.9);
-    -webkit-box-shadow:4px 0px 2000px 0px rgba(0,0,0, 0.9);
+    box-shadow:100px 0px 2000px 0px rgba(0,0,0, 0.9);
+    -moz-box-shadow:100px 0px 2000px 0px rgba(0,0,0, 0.9);
+    -webkit-box-shadow:100px 0px 2000px 0px rgba(0,0,0, 0.9);
     overflow-y: auto;
+}
+[id='nav-toggle']:checked ~ .overlay {
+	display: block;
 }
 
 [id='nav-toggle']:checked ~ main > article {
@@ -293,13 +414,21 @@ input[type="submit"]:hover, button[type="submit"]:hover, .button:hover{
     -moz-transform: translateX(320px);
     transform: translateX(320px);
 }
-
+.overlay{
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+	display: none;
+}
 .sections{
 	width: 100%;
     top: 0;
     padding:0 0 0 0;
    	min-height:100vh;
-   	background: #fff;
 }
 	.sections section{
 		width: 100%;
@@ -314,6 +443,26 @@ input[type="submit"]:hover, button[type="submit"]:hover, .button:hover{
 			.page p.h2{
 				margin:0px auto 20px;
 			}
+
+	.content{
+    	border-top: 3px solid #f1c854;
+	}
+
+.header{
+	overflow: hidden;
+	widows: 100%;
+	height: 300px;
+	background:#957e78;
+	padding:0;
+}
+	.sections .header .slider{
+		position: relative;
+		overflow: hidden;
+		widows: 100%;
+		height: 300px;
+		background:#957e78;
+		padding:0;
+	}
 
 .sections .intro{
 	overflow: hidden;
@@ -506,6 +655,56 @@ input[type="submit"]:hover, button[type="submit"]:hover, .button:hover{
 			background:url('/assets/logo_b.svg') no-repeat center;
 			background-size: contain;
 		}
+
+.table{
+	width:100%;
+	max-width: 1200px;
+	margin:auto;
+	overflow: hidden;
+}
+	.table .iteam{
+		overflow: hidden;
+		float:left;
+		width:33.33%;
+		min-width: 320px;
+		min-height: 100px;
+		margin:auto;
+		border-bottom:1px solid rgba(255,255,255,0.2);
+	}
+
+		/* НОВОСТИ */
+		.table.news .iteam{
+			position: relative;
+		}
+			.table.news .iteam .photo{
+				width:150px;
+				height: 150px;
+				background: #000;
+				float:left;
+			}
+				.table.news .iteam .photo{
+					width:150px;
+					height: 150px;
+					background: #000;
+					float:left;
+				}
+
+			.table.news .iteam .title{
+				position: absolute;
+				top:0;
+				left:0;
+				padding:0 20px 0 160px;
+				box-sizing: border-box;
+			}
+			.table.news .iteam .time{
+				position: absolute;
+				bottom:0;
+				left:0;
+				padding:0 20px 0 160px;
+				box-sizing: border-box;
+			}
+
+
 
 .button{
 	display: block;
