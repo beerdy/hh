@@ -40,7 +40,6 @@ class OrdersController < ApplicationController
 
   def orders_list
     @orders = Order.where(user_id: current_user.id)
-    puts 'LIST====================='
   end
 
   # PATCH/PUT /orders/1
