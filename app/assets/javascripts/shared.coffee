@@ -7,7 +7,6 @@ Dropzone.options.myAwesomeDropzone =
     
     this.on "success", (file, response) ->
       $("#product-form").append '<input type="hidden" name="product[photos][]" value="'+response.id.$oid+'">'
-      $("#event-form").append '<input type="hidden" name="event[photos][]" value="'+response.id.$oid+'">'
 
 Dropzone.discover()
 # END dropzone

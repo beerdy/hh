@@ -22,14 +22,6 @@ class ProductsController < ApplicationController
   def edit
   end
 
-  def search
-    if params[:tag]
-      @products = Product.where(tag: /[#{params[:tag]}]{5,}/)
-    else
-      @products = Product.all
-    end
-  end
-
   # POST /products
   # POST /products.json
   def create
