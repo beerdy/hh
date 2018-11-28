@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :set_gallery, only: [:new, :edit, :update]
 
   # GET /events
   # GET /events.json
@@ -21,13 +20,7 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
   end
-  def search
-    if params[:tag]
-      @events = Event.where(tag: /[#{params[:tag]}]{5,}/)
-    else
-      @events = Event.all
-    end
-  end
+
   # POST /events
   # POST /events.json
   def create
@@ -48,7 +41,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1.json
   def update
     respond_to do |format|
-      if @event.update( event_params.merge!({photos: event.photos}) )
+      if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
@@ -73,11 +66,9 @@ class EventsController < ApplicationController
     def set_event
       @event = Event.find(params[:id])
     end
-    def set_gallery
-      @gallery = Gallery.new
-    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :description, :slave, :image, :link, :tag, :url, :link, :sort, :photos => [])
+      params.require(:event).permit(:title, :description, :slave, :image, :link, :tag, :url, :link, :sort, :count)
     end
 end

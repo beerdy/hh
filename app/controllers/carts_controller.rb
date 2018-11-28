@@ -90,7 +90,7 @@ class CartsController < ApplicationController
   end
   def cart_item
     @order = Order.new
-    # @cart = Cart.where(user_id: current_user.id) #moved to: ApplicationController
+    @cart = Cart.where(user_id: current_user.id)
   end
 
   private

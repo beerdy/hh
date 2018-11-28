@@ -3,24 +3,11 @@ Rails.application.routes.draw do
   resources :galleries
   root 'main#index'
 
-  resources :events do
-    collection do
-      get :search
-    end
-  end
-  get 'events/search/:tag', to: 'events#search'
-  
+  resources :events
   resources :messages
   resources :carts
   resources :histories
-  
-  resources :products do
-    collection do
-      get :search
-    end
-  end
-  get 'products/search/:tag', to: 'products#search'
-  
+  resources :products
   resources :contents
   resources :orders
   #resources :users
@@ -33,7 +20,6 @@ Rails.application.routes.draw do
       get :add
     end
   end
-
   get 'bonuses/get/:card_id', to: 'bonuses#get'
   get 'bonuses/move/:card_id_from/:card_id_to/:sum', to: 'bonuses#move'
   get 'bonuses/add/:card_id/:sum', to: 'bonuses#add'
