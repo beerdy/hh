@@ -1,8 +1,10 @@
-<p id="notice"><%= notice %></p>
-
+<section class="news">
+ <%= render partial: 'application/navbar', locals: {back: true}%>
+ <%= render partial: 'application/header', locals: {h1:@product.title, h1up:"Menu", bg:"", image_url: get_image(@product.photos[0]).image.url }%>
+<div class="content">
 <p>
   <strong>Title:</strong>
-  <%= @product.title %>
+  <%=  %>
 </p>
 
 <p>
@@ -61,4 +63,7 @@
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+
+</div>
+ <%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
+</section>

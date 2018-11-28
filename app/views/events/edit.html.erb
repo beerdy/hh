@@ -1,6 +1,9 @@
-<h1>Editing Event</h1>
-
-<%= render 'form', event: @event %>
-
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+<section class="news">
+ <%= render partial: 'application/navbar', locals: {back: true}%>
+ <%= render partial: 'application/header', locals: {h1:"Редактирование новости", h1up:"News"}%>
+<div class="content">
+	<%= render 'form', event: @event %>
+	<%= link_to 'Show', @event %>
+</div>
+ <%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
+</section>
