@@ -9,29 +9,6 @@
   </head>
 
   <body>
-    <!-- МЕНЮ -->
-    <input type="checkbox" id="nav-toggle" hidden>
-    <label for="nav-toggle" class="nav-toggle-on" onclick></label>
-    <nav class="nav">
-        <label for="nav-toggle" class="nav-toggle-off" onclick></label>
-        <ul>
-            <li class="user">
-              <div class="avatar"></div>
-              <div class="name">Владимир Каленберг</div>
-              <div class="phone">+79997883625</div>
-            </li>
-            <li class="menu"><%= link_to 'Меню доставки', products_path %></li>
-            <li class="bron"><a href="#3">Забронировать столик</a></li>
-            <li class="news"><a href="#2"><%= link_to 'Новости', events_path %></a></li>
-            <li class="otziv"><a href="#4">Оставить отзыв</a></li>
-            <li class="cont"><a href="#4">Контакты</a></li>
-            <li class="small user"><a href="#4">Личный кабинет</a></li>
-            <li class="small cart"><%= link_to 'Корзина', cart_item_show_path %></li>
-            <li class="small logout"><%= render 'devise/menu/login_items' %></a></li>
-        </ul>
-    </nav>
-    <!-- МЕНЮ ОФФ -->
-    <div class="overlay"></div>
     <div class="sections">
       <%= yield %>
     </div>
