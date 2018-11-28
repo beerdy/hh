@@ -1,3 +1,12 @@
+<<< master
+<h1>Main#index</h1>
+<p>Find me in app/views/main/index.html.erb</p>
+
+Моя Корзина: <%= link_to 'Show', cart_item_show_path %> | Товаров в корзине: <%= current_cart.count %><br>
+Продукты: <%= link_to 'Show', products_path %><br>
+Новости: <%= link_to 'Show', events_path %><br>
+Мои заказы: <%= link_to 'Show', orders_list_show_path %><br>
+===
 <section class="intro">
  <%= render partial: 'application/navbar', locals: {back: false}%>
 	<div class="slider">
@@ -29,3 +38,4 @@
     	 <%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
     </div>
 </section>
+>>> candream

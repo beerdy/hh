@@ -1,0 +1,7 @@
+searched tag: <%= params[:tag]%> | <br>
+<hr>
+<ul>
+<% @events.each do |event| %>
+<li><%= event.title %> | All tags: <%= event.tag %></li>
+<% end %>
+</ul>

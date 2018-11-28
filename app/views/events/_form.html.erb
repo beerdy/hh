@@ -1,67 +1,92 @@
-<%= form_with(model: event, local: true) do |form| %>
-  <% if event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="row">
+  <div class="col-md-6">
+    <div class="fallback">
+      <%= form_with(model: gallery, local: true, html: {class: "dropzone", id: "myAwesomeDropzone"}) do |form| %>
+        <% if gallery.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
 
-      <ul>
-      <% event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+            <ul>
+            <% gallery.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="fallback">
+          <input name="file" type="file" multiple />
+        </div>
+      <% end if gallery %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :event_title %>
   </div>
+  <div class="col-md-6">
+    <%= form_for event, html: { class: "form-horizontal", multipart: true, id: 'event-form' }  do |form| %>
+      <% if event.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :event_description %>
-  </div>
+          <ul>
+          <% event.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <div class="field">
-    <%= form.label :slave %>
-    <%= form.text_area :slave, id: :event_slave %>
-  </div>
+      <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title, id: :event_title %>
+      </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image, id: :event_image %>
-  </div>
+      <div class="field">
+        <%= form.label :description %>
+        <%= form.text_area :description, id: :event_description %>
+      </div>
 
-  <div class="field">
-    <%= form.label :link %>
-    <%= form.text_field :link, id: :event_link %>
-  </div>
+      <div class="field">
+        <%= form.label :slave %>
+        <%= form.text_area :slave, id: :event_slave %>
+      </div>
 
-  <div class="field">
-    <%= form.label :tag %>
-    <%= form.text_field :tag, id: :event_tag %>
-  </div>
+      <div class="field">
+        <%= form.label :image %>
+        <%= form.text_field :image, id: :event_image %>
+      </div>
 
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url, id: :event_url %>
-  </div>
+      <div class="field">
+        <%= form.label :link %>
+        <%= form.text_field :link, id: :event_link %>
+      </div>
 
-  <div class="field">
-    <%= form.label :link %>
-    <%= form.text_field :link, id: :event_link %>
-  </div>
+      <div class="field">
+        <%= form.label :tag %>
+        <%= form.text_field :tag, id: :event_tag %>
+      </div>
 
-  <div class="field">
-    <%= form.label :sort %>
-    <%= form.number_field :sort, id: :event_sort %>
-  </div>
+      <div class="field">
+        <%= form.label :url %>
+        <%= form.text_field :url, id: :event_url %>
+      </div>
 
-  <div class="field">
-    <%= form.label :count %>
-    <%= form.number_field :count, id: :event_count %>
-  </div>
+      <div class="field">
+        <%= form.label :link %>
+        <%= form.text_field :link, id: :event_link %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
+      <div class="field">
+        <%= form.label :sort %>
+        <%= form.number_field :sort, id: :event_sort %>
+      </div>
+
+      <div class="field">
+        <%= form.label :count %>
+        <%= form.number_field :count, id: :event_count %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

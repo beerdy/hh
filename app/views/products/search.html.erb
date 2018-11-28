@@ -1,0 +1,7 @@
+searched tag: <%= params[:tag]%> | <br>
+<hr>
+<ul>
+<% @products.each do |product| %>
+<li><%= product.title %> | All tags: <%= product.tag %></li>
+<% end %>
+</ul>

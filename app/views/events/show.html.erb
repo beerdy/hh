@@ -1,12 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @event.title %>
+</p>
+
+<% if has_image? @event.photos[0] %>
+  <ul class="product-images">
+    <% @event.photos.each do |meta| %>
+      <li class="item">
+        <div class="meta">meta</div>
+        <%= image_tag get_image(meta).image.url, class: 'img-responsive', width: '320' %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <%= image_tag 'backgrounds/no-image320x240.png', class: 'img-responsive' %>
+<%end%>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<<<==candream
 <section class="newsiteam">
- <%= render partial: 'application/navbar', locals: {back: true}%>
- <%= render partial: 'application/header', locals: {h1:@event.title, h1up:"News"}%>
-<div class="content">
-<div class="text">
-    <div class="time"><%= @event.id.generation_time.day %>.<%= @event.id.generation_time.month %>.<%= @event.id.generation_time.year %></div>
-    <div class="tags"><%= @event.tag %></div>
-    
-    <p><%= @event.description %></p>
+  <%= render partial: 'application/navbar', locals: {back: true}%>
+  <%= render partial: 'application/header', locals: {h1:@event.title, h1up:"News"}%>
+  <div class="content">
+    <div class="text">
+      <div class="time"><%= @event.id.generation_time.day %>.<%= @event.id.generation_time.month %>.<%= @event.id.generation_time.year %></div>
+      <div class="tags"><%= @event.tag %></div>
+
+      <p><%= @event.description %></p>
+    </div>
+    <%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
+  </div>
+</section>
+>>>==candream
 
 <p>
   <strong>Slave:</strong>
@@ -52,8 +83,5 @@
 
 </div>
 </table>
-</div>
- <%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
-</section>
 
 
