@@ -42,7 +42,6 @@ module Mongoid
       end
 
       def copy
-        puts "COPYYYYYYYYYYYYY=================================="
         bsons.map! do |bson|
           # get class as capitalized symbol. For example: :Gallery
           klass = source.capitalize
