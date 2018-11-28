@@ -1,15 +1,12 @@
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+<section class="newsiteam">
+ <%= render partial: 'application/navbar', locals: {back: true}%>
+ <%= render partial: 'application/header', locals: {h1:@event.title, h1up:"News"}%>
+<div class="content">
+<div class="text">
+    <div class="time"><%= @event.id.generation_time.day %>.<%= @event.id.generation_time.month %>.<%= @event.id.generation_time.year %></div>
+    <div class="tags"><%= @event.tag %></div>
+    
+    <p><%= @event.description %></p>
 
 <p>
   <strong>Slave:</strong>
@@ -51,5 +48,12 @@
   <%= @event.count %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Edit', edit_event_path(@event), class: 'button' %>
+
+</div>
+</table>
+</div>
+ <%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
+</section>
+
+

@@ -1,36 +1,28 @@
 <section class="news">
-<div class="header">
-  <div class="slider">
-      <div class="slider-overlay">
-        <a href="/" class="logo">
-        </a>
-      </div>
-           <ul class="slidewrapper">
-                <li class="slide" style="background-image:url('/assets/slide1.jpg')"></li>
-        <li class="slide" style="background-image:url('/assets/slide1.jpg')"></li>
-        <li class="slide" style="background-image:url('/assets/slide1.jpg')"></li>
-        <li class="slide" style="background-image:url('/assets/slide1.jpg')"></li>
-            </ul>
-  </div>
-</div>
+ <%= render partial: 'application/navbar', locals: {back: false}%>
+ <%= render partial: 'application/header', locals: {h1:"Новости и акции", h1up:"News"}%>
 <div class="content">
-<h1>Новости и акции</h1>
-<p id="notice"><%= notice %></p>
-<div class="table news">
+<select>
+  <option>Все</option>
+  <option>Дорадо</option>
+  <option>Бавария</option>
+  <option>Акции</option>
+</select>
+<div class="table">
     <% @events.each do |event| %>
        <div class="iteam">
-        <a href="<%= event.link %>">
-          <div class="photo"><%= event.image %></div>
+        <%= link_to event do %>
+          <div class="photo"><%= event.image %><div class="time_box"><%= event.id.generation_time.day %><span>авг</span></div></div>
           <div class="title"><h3><%= event.title %></h3></div>
-          <div class="time"><%= event.tag %></div>
+          <div class="time"><%= event.id.generation_time.day %>.<%= event.id.generation_time.month %>.<%= event.id.generation_time.year %>, <%= event.tag %>
+          </div>
+        <% end %>
         </a>
       </div>
     <% end %>
 </div>
 </table>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'Добавить', new_event_path, class: 'admin_button' %>
 </div>
+ <%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
 </section>

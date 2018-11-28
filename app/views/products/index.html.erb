@@ -1,54 +1,20 @@
-<div id="products-index">
-<p id="notice"><%= notice %></p>
+<section class="products">
+ <%= render partial: 'application/navbar', locals: {back: false}%>
+ <%= render partial: 'application/header', locals: {h1:"МЕНЮ ДОСТАВКИ", h1up:"Menu"}%>
+<div class="content">
+<div class="table news">
 
-<h1>Products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Slave</th>
-      <th>Image preview</th>
-      <th>Link</th>
-      <th>Tags</th>
-      <th>Url</th>
-      <th>Link</th>
-      <th>Sort</th>
-      <th>Count</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.title %></td>
-        <td><%= product.description %></td>
-        <td><%= product.slave %></td>
-        <td><%= image_tag (has_image?(product.photos[0]) ? get_image(product.photos[0]).image.url(:thumb) : 'backgrounds/no-image320x240.png'), width: '100' %></td>
-        <td><%= product.link %></td>
-        <td><%= product.tag %></td>
-        <td><%= product.url %></td>
-        <td><%= product.link %></td>
-        <td><%= product.sort %></td>
-        <td><%= product.count %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td>
-          <div class="field">
-            <%= link_to 'Купить', cart_item_add_path(:product_id => product.id), class: 'js-cart-item-add', method: :post, remote: true %>
-            <input id="product_quantify" type="number" name="product_quantify" value=1>
-          </div>
-        </td>
-        
-      </tr>
+ <% @products.each do |product| %>
+       <div class="iteam">
+        <%= link_to product do %>
+          <div class="photo"><%= image_tag (has_image?(product.photos[0]) ? get_image(product.photos[0]).image.url(:thumb) : 'backgrounds/no-image320x240.png'), height: '150'%></div>
+          <div class="title"><h3><%= product.title %></h3><div class="desc"><%= product.description %></div></div>
+          <div class="price">400<span>руб.</span></div>
+          <%= link_to '', cart_item_add_path(:product_id => product.id), class: 'js-cart-item-add add_to_cart', method: :post, remote: true %>
+        <% end %>
+      </div>
     <% end %>
-  </tbody>
-</table>
 
-<br>
-
+</div>
 <%= link_to 'New Product', new_product_path %>
 </div>

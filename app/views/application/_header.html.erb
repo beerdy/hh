@@ -1,1 +1,16 @@
-header.html.erb
+<div class="header">
+  <div class="slider">
+      <div class="slider-overlay">
+        <a href="/" class="logo">
+        </a>
+        <h1><div class="up"><%= h1up %></div><%= h1 %></h1>
+      </div>
+      <ul class="slidewrapper"> 
+        <%if defined?(image_url)=="local-variable"%>
+        <li class="slide" style="background-image:url('<%= image_url%>)"></li>
+        <%else%>
+        <li class="slide" style="background-image:url('/assets/slide1.jpg')"></li>
+        <%end%>
+      </ul>
+  </div>
+</div>
