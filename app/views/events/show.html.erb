@@ -1,6 +1,6 @@
 <section class="newsiteam">
- <%= render partial: 'application/navbar', locals: {back: true}%>
- <%= render partial: 'application/header', locals: {h1:@event.title, h1up:"News"}%>
+ <%= render partial: 'application/navbar', locals: {back: true, back_url: events_path}%>
+ <%= render partial: 'application/header', locals: {h1:@event.title, h1up:"News", image_url: (get_image(@event.photos[0]).nil? ? '' : get_image(@event.photos[0]).image.url) }%>
 <div class="content">
 <div class="text">
     <div class="time"><%= @event.id.generation_time.day %>.<%= @event.id.generation_time.month %>.<%= @event.id.generation_time.year %></div>
@@ -13,10 +13,18 @@
   <%= @event.slave %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @event.image %>
-</p>
+<% if has_image? @event.photos[0] %>
+  <ul class="product-images">
+    <% @event.photos.each do |meta| %>
+      <li class="item">
+        <div class="meta">meta</div>
+        <%= image_tag get_image(meta).image.url, class: 'img-responsive', width: '320' %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <%= image_tag 'backgrounds/no-image320x240.png', class: 'img-responsive' %>
+<%end%>
 
 <p>
   <strong>Link:</strong>

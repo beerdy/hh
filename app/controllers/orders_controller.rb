@@ -29,6 +29,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params.merge!({ products: products_prepare_for_order, user_id: current_user.id }))
     respond_to do |format|
       if @order.save
+        
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
@@ -40,7 +41,6 @@ class OrdersController < ApplicationController
 
   def orders_list
     @orders = Order.where(user_id: current_user.id)
-    puts 'LIST====================='
   end
 
   # PATCH/PUT /orders/1

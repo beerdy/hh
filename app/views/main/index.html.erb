@@ -1,8 +1,8 @@
 <section class="intro">
  <%= render partial: 'application/navbar', locals: {back: false}%>
-	<div class="slider">
+	<div class="slider animated fadeIn">
 			<div class="slider-overlay">
-				<a href="/" class="logo">
+				<a href="/" class="logo animated flipInY">
 					<div class="rest">ресторан-пивоварня</div>
 				</a>
 	         <div class="zal">
@@ -24,7 +24,7 @@
             </div>
     </div>
     <div class="welcome">
-    	<h1><div class="up">Welcome</div>Добро пожаловать в Хмельхаус!</h1>
+    	<h1 class="animated fadeInDown"><div class="up">Welcome</div>Добро пожаловать в Хмельхаус!</h1>
     	<a href="/" class="button">Забронировать столик</a>
     	 <%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
     </div>

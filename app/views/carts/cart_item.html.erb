@@ -12,7 +12,7 @@
   <% end %>
 
   <ul>
-  <% @cart.each_with_index do |cart,index| %>
+  <% current_cart.cart.each_with_index do |cart,index| %>
     <li><%= "#{cart.product.title} (#{cart.product.description}) - #{cart.product_quantify}шт." %></li>
     <%= form.hidden_field :products, id: :order_products, type: 'hidden' %>
     <input id="order_products" type="hidden" value='<%= "#{cart.product_id}_#{cart.product_quantify}" %>' name="product<%=index%>">

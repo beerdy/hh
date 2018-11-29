@@ -1,18 +1,13 @@
 <section class="news">
  <%= render partial: 'application/navbar', locals: {back: false}%>
- <%= render partial: 'application/header', locals: {h1:"Новости", h1up:"News"}%>
+ <%= render partial: 'application/header', locals: {h1:"Новости | #{params[:tag]}", h1up:"News"}%>
 <div class="content">
-
 <div class="search">
-  <ul>
-    <li class="current">Категории</li>
-    <li><a href="/events/">Все</a></li>
-    <li><a href="/events/search/дорадо">Дорадо</a></li>
-    <li><a href="/events/search/бавария">Бавария</a></li>
-    <li><a href="/events/search/акция">Акции</a></li>
-  </ul>
+  <a href="/events/">Все</a>
+  <a href="/events/search/дорадо">Дорадо</a>
+  <a href="/events/search/бавария">Бавария</a>
+  <a href="/events/search/акция">Акции</a>
 </div>
-
 <div class="table">
     <% @events.each do |event| %>
        <div class="iteam">
