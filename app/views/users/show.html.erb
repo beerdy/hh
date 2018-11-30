@@ -1,54 +1,53 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @user.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @user.description %>
-</p>
-
-<p>
-  <strong>Slave:</strong>
-  <%= @user.slave %>
-</p>
-
-<p>
   <strong>Image:</strong>
-  <%= @user.image %>
+  <%= image_tag @user.image.url(:medium) %>
+  <%= image_tag @user.image.url(:thumb) %>
+  <%= image_tag @user.image.url(:original) %>
 </p>
 
 <p>
-  <strong>Link:</strong>
-  <%= @user.link %>
+  <strong>FIO:</strong>
+  <%= @user.fio %>
+</p>
+<p>
+  <strong>HB:</strong>
+  <%= @user.hb %>
+</p>
+
+
+<p>
+  <strong>email:</strong>
+  <%= @user.email %>
+</p>
+
+
+<p>
+  <strong>card:</strong>
+  <%= @user.card %>
 </p>
 
 <p>
-  <strong>tag:</strong>
-  <%= @user.tag %>
+  <strong>phone:</strong>
+  <%= @user.phone %>
 </p>
 
 <p>
-  <strong>Url:</strong>
-  <%= @user.url %>
+  <strong>role:</strong>
+  <%= @user.role %>
 </p>
 
 <p>
-  <strong>Link:</strong>
-  <%= @user.link %>
+  <strong>bonuses:</strong>
+  <%= @user.bonuses %>
 </p>
 
 <p>
-  <strong>Sort:</strong>
-  <%= @user.sort %>
+  <strong>percent:</strong>
+  <%= @user.percent %>
 </p>
 
-<p>
-  <strong>Count:</strong>
-  <%= @user.count %>
-</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

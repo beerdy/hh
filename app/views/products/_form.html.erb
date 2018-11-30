@@ -1,3 +1,51 @@
+<script type="text/javascript">
+(function() {
+  document.addEventListener("turbolinks:load", function() {
+  Dropzone.autoDiscover = false;
+
+  Dropzone.options.myAwesomeDropzone = {
+    init: function() {
+      var dz, mockFile, url;
+
+      Dropzone.startStatus = true;
+      this.on("success", function(file, response) {
+        $("#product-form").append('<input type="hidden" name="product[photos][]" value="' + response.id.$oid + '">');
+        return $("#event-form").append('<input type="hidden" name="event[photos][]" value="' + response.id.$oid + '">');
+      });
+
+      $('.dz-complete').remove()
+      dz = this;
+
+<% if has_image? product.photos[0] %>
+<% product.photos.each do |meta_mongoid| %>
+      url = '<%= get_image(meta_mongoid).image.url %>';
+      mockFile = {
+        name: 'image.name',
+        size: 12345,
+        accepted: true,
+        kind: 'image',
+        upload: {
+          filename: 'kirandi.jpg'
+        },
+        dataURL: url
+      };
+
+      this.files.push(mockFile);
+      this.emit("addedfile", mockFile);
+      this.createThumbnailFromUrl(mockFile, this.options.thumbnailWidth, this.options.thumbnailHeight, this.options.thumbnailMethod, true, function(thumbnail) {
+        dz.emit('thumbnail', mockFile, thumbnail);
+        return dz.emit("complete", mockFile);
+      });
+<% end %>
+<% end %>
+    }
+  };
+
+  Dropzone.discover();
+});
+
+}).call(this);
+</script>
 <div class="row">
   <div class="col-md-6">
     <div class="fallback">

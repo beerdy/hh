@@ -13,19 +13,10 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery
-//= require jquery_ujs 
+//= require jquery_ujs
 //= require cart
 
-//= require underscore
-//= require backbone
-//= require backbone_rails_sync
-//= require backbone_datalink
-//= require backbone/hh
-//= require underscore
-//= require backbone
-//= require backbone_rails_sync
-//= require backbone_datalink
-//= require backbone/hh
+//= require ckeditor/init
 
 //
 //--- Static libs --///

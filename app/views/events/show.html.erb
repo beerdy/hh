@@ -5,56 +5,19 @@
 <div class="text">
     <div class="time"><%= @event.id.generation_time.day %>.<%= @event.id.generation_time.month %>.<%= @event.id.generation_time.year %></div>
     <div class="tags"><%= @event.tag %></div>
-    
-    <p><%= @event.description %></p>
-
-<p>
-  <strong>Slave:</strong>
-  <%= @event.slave %>
-</p>
-
-<% if has_image? @event.photos[0] %>
-  <ul class="product-images">
-    <% @event.photos.each do |meta| %>
-      <li class="item">
-        <div class="meta">meta</div>
-        <%= image_tag get_image(meta).image.url, class: 'img-responsive', width: '320' %>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <%= image_tag 'backgrounds/no-image320x240.png', class: 'img-responsive' %>
-<%end%>
-
-<p>
-  <strong>Link:</strong>
-  <%= @event.link %>
-</p>
-
-<p>
-  <strong>tag:</strong>
-  <%= @event.tag %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @event.url %>
-</p>
-
-<p>
-  <strong>Link:</strong>
-  <%= @event.link %>
-</p>
-
-<p>
-  <strong>Sort:</strong>
-  <%= @event.sort %>
-</p>
-
-<p>
-  <strong>Count:</strong>
-  <%= @event.count %>
-</p>
+    <div class="page">
+    <div class="product-images">
+    <% if has_image? @event.photos[0] %>
+      
+        <% @event.photos.each do |meta| %>
+            <%= image_tag get_image(meta).image.url, class: 'img-responsive', width: '320' %>
+        <% end %>
+    <% else %>
+      <%= image_tag 'backgrounds/no-image320x240.png', class: 'img-responsive' %>
+    <%end%>
+    </div>
+    <div class="description"><%= @event.description.html_safe %></div>
+    </div>
 
 <%= link_to 'Edit', edit_event_path(@event), class: 'button' %>
 

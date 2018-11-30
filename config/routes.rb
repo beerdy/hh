@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+  get 'pages/dorado'
+
+  get 'pages/bavariya'
+
+  get 'pages/contacts'
+
   resources :galleries
   root 'main#index'
 
@@ -23,8 +30,8 @@ Rails.application.routes.draw do
   
   resources :contents
   resources :orders
-  #resources :users
   devise_for :users
+  resources :users
 
   resources :bonuses do
     collection do

@@ -1,7 +1,9 @@
 class User
   include Mongoid::Document
+  include Mongoid::Paperclip
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -15,6 +17,24 @@ class User
 
   ## Rememberable
   field :remember_created_at, type: Time
+
+
+  has_mongoid_attached_file :image  
+  has_mongoid_attached_file :image,
+    :styles => {
+      :thumb => "320x240#",
+      :medium => "800x600#"
+    }
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+  field :fio,               type: String, default: ""
+  field :hb,                type: String, default: ""
+  field :card,              type: String, default: ""
+  field :phone,             type: String, default: ""
+  field :role,              type: String, default: ""
+  field :bonuses,           type: Integer, default: 300
+  field :percent,           type: Integer, default: 3
+
 
   ## Trackable
   # field :sign_in_count,      type: Integer, default: 0

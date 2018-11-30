@@ -1,4 +1,4 @@
-<%= form_with(model: user, local: true) do |form| %>
+<%= form_for user, html: { multipart: true }  do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -12,53 +12,49 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :user_title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :user_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :slave %>
-    <%= form.text_area :slave, id: :user_slave %>
-  </div>
-
-  <div class="field">
     <%= form.label :image %>
-    <%= form.text_field :image, id: :user_image %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="field">
-    <%= form.label :link %>
-    <%= form.text_field :link, id: :user_link %>
+    <%= form.label :fio %>
+    <%= form.text_field :fio, id: :user_fio %>
   </div>
 
   <div class="field">
-    <%= form.label :tag %>
-    <%= form.text_field :tag, id: :user_tag %>
+    <%= form.label :hb %>
+    <%= form.text_field :hb, id: :user_hb %>
   </div>
 
   <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url, id: :user_url %>
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :user_email %>
   </div>
 
   <div class="field">
-    <%= form.label :link %>
-    <%= form.text_field :link, id: :user_link %>
+    <%= form.label :card %>
+    <%= form.text_field :card, id: :user_card %>
   </div>
 
   <div class="field">
-    <%= form.label :sort %>
-    <%= form.number_field :sort, id: :user_sort %>
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :user_phone %>
   </div>
 
   <div class="field">
-    <%= form.label :count %>
-    <%= form.number_field :count, id: :user_count %>
+    <%= form.label :role %>
+    <%= form.text_field :role, id: :user_role %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :bonuses %>
+    <%= form.text_field :bonuses, id: :user_bonuses %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :percent %>
+    <%= form.text_field :percent, id: :user_percent %>
   </div>
 
   <div class="actions">
