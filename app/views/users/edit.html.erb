@@ -1,6 +1,13 @@
-<h1>Editing User</h1>
+<section class="news">
+<%= render partial: 'application/navbar', locals: {back: false}%>
+<%= render partial: 'application/header', locals: {h1:"Редактирвоание профиля", h1up:"User"}%>
+<div class="content">
+  <div class="page">
 
 <%= render 'form', user: @user %>
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
+
+<%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
+</section>

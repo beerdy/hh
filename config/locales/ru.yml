@@ -1,0 +1,30 @@
+ru:
+  candream:
+    some:
+      lable: 'Некторая переменная'
+  mongoid:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: '- поле электронного адреса должно быть заполнено'
+    attributes:
+      user:
+        image: 'Аватар'
+        email: "Email"
+        fio: 'Имя Фамилия' 
+        password: 'Пароль'
+        remember_me: 'Запомнить меня'
+        login: 'Вход'
+        address: 'Адрес'
+        phone: 'Телефон'
+        password_confirmation: 'Еще раз пароль'
+
+      reservation:
+        email: "Email"
+        phone: 'Телефон'
+        description: 'Описание'
+        user: 'Пользователь'
+      order:
+        address: 'Адрес'

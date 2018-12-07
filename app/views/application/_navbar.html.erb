@@ -4,23 +4,27 @@
 <% else %>
     <input type="checkbox" id="nav-toggle" hidden>
     <label for="nav-toggle" class="nav-toggle-on" onclick></label>
+    <div class="phonen">
+        8 800 12 34 56
+        <div class="mail">info@hmelhaus.ru</div>
+    </div>
     <nav class="nav">
         <label for="nav-toggle" class="nav-toggle-off" onclick></label>
         <ul>
             <% if user_signed_in? %>
             <li class="user">
-              <div class="avatar"></div>
-              <div class="name">Владимир Каленберг</div>
-              <div class="phone">+79997883625</div>
+              <div class="avatar"><%= image_tag current_user.image.url(:thumb) %></div>
+              <div class="name"><%= current_user.fio %></div>
+              <div class="phone"><%= current_user.phone %></div>
             </li>
             <% end %>
             <li class="menu"><%= link_to 'Меню доставки', products_path %></li>
-            <li class="bron"><a href="#3">Забронировать столик</a></li>
-            <li class="news"><a href="#2"><%= link_to 'Новости', events_path %></a></li>
-            <li class="otziv"><a href="#4">Оставить отзыв</a></li>
-            <li class="cont"><a href="#4">Контакты</a></li>
+            <li class="bron"><a href="/reservations/new">Забронировать столик</a></li>
+            <li class="news"><%= link_to 'Новости', events_path %></li>
+            <li class="otziv"><a href="/reviews/new">Оставить отзыв</a></li>
+            <li class="cont"><a href="/pages/contacts">Контакты</a></li>
             <% if user_signed_in? %>
-            <li class="small user"><a href="#4">Личный кабинет</a></li>
+            <li class="small user"><a href="/users/<%= current_user.id %>">Личный кабинет</a></li>
             <li class="small cart"><%= link_to "Корзина (#{current_cart.count})", cart_item_show_path %></li>
              <% end %>
             <li class="small logout"><%= render 'devise/menu/login_items' %></a></li>

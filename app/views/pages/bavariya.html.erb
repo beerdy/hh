@@ -1,2 +1,42 @@
-<h1>Pages#bavariya</h1>
-<p>Find me in app/views/pages/bavariya.html.erb</p>
+<section class="news">
+<%= render partial: 'application/navbar', locals: {back: false}%>
+<%= render partial: 'application/header', locals: {h1:"Зал Бавария", h1up:"Bavaria"}%>
+<div class="content">
+<div class="bavaria"></div>
+<div class="text">
+<p>Не следует, однако забывать, что рамки и место обучения кадров позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач.</p>
+
+<p>Товарищи! начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач. Товарищи! новая модель организационной деятельности требуют определения и уточнения направлений прогрессивного развития. Не следует, однако забывать, что рамки и место обучения кадров требуют определения и уточнения систем массового участия.</p>
+</div>
+<div class="menu">
+<a href="">ОСН. МЕНЮ</a>
+<a href="">ПИВНАЯ КАРТА</a>
+<a href="">ВИННАЯ КАРТА</a>
+<a href="">ДЕТСКОЕ МЕНЮ</a>
+</div>
+<div class="photos">
+	<div class=""><img></div>
+	<div class=""><img></div>
+	<div class=""><img></div>
+	<div class=""><img></div>
+</div>
+<a href="/reservations/new" class="button">Забронировать столик</a>
+</div>
+<h2>Последние новости</h2>
+<div class="table">
+<% Event.where(tag: /бавария/i).each do |bavaria| %>
+       <div class="iteam">
+        <%= link_to bavaria do %>
+          <div class="photo"><%= image_tag (has_image?(bavaria.photos[0]) ? get_image(bavaria.photos[0]).image.url(:thumb) : 'backgrounds/no-image320x240.png'), height: '150'%><div class="time_box"><%= bavaria.id.generation_time.day %><span>авг</span></div></div>
+          <div class="title"><h3><%= bavaria.title %></h3></div>
+          <div class="time"><%= bavaria.id.generation_time.day %>.<%= bavaria.id.generation_time.month %>.<%= bavaria.id.generation_time.year %>, <%= bavaria.tag %>
+          </div>
+        <% end %>
+        </a>
+      </div>
+    <% end %>
+</div>
+
+<%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
+</section>
+

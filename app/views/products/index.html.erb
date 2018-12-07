@@ -9,7 +9,7 @@
         <%= link_to product do %>
           <div class="photo"><%= image_tag (has_image?(product.photos[0]) ? get_image(product.photos[0]).image.url(:thumb) : 'backgrounds/no-image320x240.png'), height: '150'%></div>
           <div class="title"><h3><%= product.title %></h3><div class="desc"><%= product.description %></div></div>
-          <div class="price">400<span>руб.</span></div>
+          <div class="price"><%= product.link %><span>руб.</span></div>
           <%= link_to '', cart_item_add_path(:product_id => product.id), class: 'js-cart-item-add add_to_cart', method: :post, remote: true %>
         <% end %>
       </div>

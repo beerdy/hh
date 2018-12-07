@@ -1,53 +1,36 @@
-<p id="notice"><%= notice %></p>
+<section class="news">
+<%= render partial: 'application/navbar', locals: {back: false}%>
+<%= render partial: 'application/header', locals: {h1:@user.fio, h1up:"Bavaria"}%>
+<div class="content">
+  <div class="page">
+    <div class="user-images">
+      <%= image_tag @user.image.url(:thumb) %>
+    </div>
+    <div class="user-info">
+      <div class="bs">
+        <div class="bonuses"><%= @user.bonuses %> <span>баллов</span></div>
+        <div class="sale"><span>скидка </span><%= @user.percent %>%</div>
+      </div>
+      <p>
+        <strong>HB:</strong>
+        <%= @user.hb %>
+      </p>
+      <p>
+        <strong>email:</strong>
+        <%= @user.email %>
+      </p>
+      <p>
+        <strong>card:</strong>
+        <%= @user.card %>
+      </p>
+      <p>
+        <strong>phone:</strong>
+        <%= @user.phone %>
+      </p>
+  </div>
+</div>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @user.image.url(:medium) %>
-  <%= image_tag @user.image.url(:thumb) %>
-  <%= image_tag @user.image.url(:original) %>
-</p>
+<%= link_to 'Редактировать профиль', edit_user_path(@user), class: 'button' %>
 
-<p>
-  <strong>FIO:</strong>
-  <%= @user.fio %>
-</p>
-<p>
-  <strong>HB:</strong>
-  <%= @user.hb %>
-</p>
-
-
-<p>
-  <strong>email:</strong>
-  <%= @user.email %>
-</p>
-
-
-<p>
-  <strong>card:</strong>
-  <%= @user.card %>
-</p>
-
-<p>
-  <strong>phone:</strong>
-  <%= @user.phone %>
-</p>
-
-<p>
-  <strong>role:</strong>
-  <%= @user.role %>
-</p>
-
-<p>
-  <strong>bonuses:</strong>
-  <%= @user.bonuses %>
-</p>
-
-<p>
-  <strong>percent:</strong>
-  <%= @user.percent %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
+</section>

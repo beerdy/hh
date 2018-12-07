@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: 
 */
 
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800&subset=cyrillic,cyrillic-ext');
 
 @font-face {
 	font-family: 'Got';
@@ -79,7 +79,7 @@ body {
   	width:100%;
   	min-height:100%;
 	font-size:14px; /* Resets 1em to 10px */
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 	color: #fff;
 	margin:0 !important;
@@ -106,7 +106,7 @@ h1{
 	text-align: left;
 	padding:40px 0 0px 0px;
 	text-transform: uppercase;
-	font-weight: bold;
+	font-weight: 800;
 	text-align: center;
 }
 h1 .up{
@@ -160,10 +160,17 @@ h5{
 	margin:0 0 5px 0;
 }
 p{
-	font-size: 14px;
+	font-size: 15px;
 	line-height:22px;
-	letter-spacing: 1.5px;
+	letter-spacing: 0.5px;
 	margin:20px 0px 20px 0px;
+}
+p.center{
+	font-size: 15px;
+	line-height:22px;
+	letter-spacing: 0.5px;
+	margin:20px 0px 20px 0px;
+	text-align: center;
 }
 a{
 	font-size:12px;
@@ -175,7 +182,6 @@ a:hover{
 
 input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="number"], input[type="date"], .country_select a, option, select{
 	width:100%;
-	max-width:500px;
 	margin:5px 0 5px 0;
 	border:1px solid #000;
 	font-size: 16px;
@@ -184,41 +190,42 @@ input[type="text"], input[type="password"], input[type="email"], input[type="tel
 	padding: 20px 10px 20px 10px;
 	box-sizing: border-box;
 	color:#fff;
-
+	letter-spacing: 1px;
 }
 textarea{
 	width:100%;
 	max-width:960px;
 	min-height: 100px;
 	padding: 20px 10px 20px 10px !important;
-	margin:0 auto 5px;
+	margin:5px 0 5px 0;
 	border-radius:0px;
-	border:0px solid #bbb;
+	border:1px solid #000;
 	font-size: 16px;
 	line-height: 16px;
 	box-sizing: border-box;
 	color:#fff;
 	background:rgba(0,0,0,0.5);
+	letter-spacing: 1px;
 }
 input[type="submit"], button[type="submit"], .button{
-	width: 100%;
-    max-width: 500px;
-    display: inline-block;
-    margin: 0px auto 0;
     line-height: 36px;
     text-align: center;
     font-size: 14px;
-    font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
     border:none;
     color: #000;
-    background: #fbcb45;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    padding:20px 10px 20px 10px;
+   	display: block;
+	width:100%;
+	max-width: 300px;
+	padding:10px;
+	background: #f1c854;
+	box-sizing: border-box;
+	margin:auto;
+	border-radius: 3px;
+	cursor: pointer;
+	font-weight: 800;
+	letter-spacing: 1px;
 }
 input[type="submit"]:hover, button[type="submit"]:hover, .button:hover{
     background: #d3ab38;
@@ -295,7 +302,7 @@ option, select{
 			display: block;
 			font-size: 16px;
 			line-height: 50px;
-			font-weight: bold;
+			font-weight: 600;
 			text-transform: uppercase;
 			letter-spacing: 2px;
 			text-decoration: none;
@@ -349,7 +356,15 @@ option, select{
 			background:#000;
 			float:left;
 			border-radius: 100%;
+			overflow: hidden;
+			border:3px solid #fff;
 		}
+			.nav li.user .avatar img{
+			    width: 50px;
+			    height: 50px;
+			    object-fit: cover;
+			}
+
 		.nav li.user .name{
 			position: absolute;
 			top:5px;
@@ -382,7 +397,7 @@ option, select{
 	height: 40px;
 	display: block;
 	position: absolute;
-    left: 20px;
+    left: 60px;
     top: 20px;
     padding: 5px;
     color: #fff;
@@ -398,10 +413,34 @@ option, select{
 	background-size: 35px;
 	background-repeat: no-repeat;
 }
-
+.phonen{
+	width: 200px;
+	height: 40px;
+	display: block;
+	position: absolute;
+    right: 60px;
+    top: 20px;
+    padding: 5px;
+    color: #fff;
+    padding:5px;
+    line-height: 1;
+    z-index: 2;
+	text-align: right;
+	font-size: 24px;
+	letter-spacing: 2px;
+	font-weight: 800;
+}
+	.phonen .mail{
+	    color: #f1c854;
+		text-align: right;
+		font-size: 14px;
+		letter-spacing: 2px;
+		line-height: 18px;
+		font-weight: normal;
+	}
 .nav-toggle-on{
     position: absolute;
-    left: 20px;
+    left: 60px;
     top: 20px;
     padding: 5px;
     color: #fff;
@@ -499,9 +538,9 @@ option, select{
 			}
 
 	.content{
-    	border-top: 3px solid #f1c854;
+    	margin:auto;
 	}
-		.content .text{
+		.text{
 	    	width:100%;
 	    	max-width: 1200px;
 	    	margin: auto;
@@ -511,16 +550,21 @@ option, select{
 
 		.content .field{
 	    	width:100%;
-	    	max-width: 1000px;
+	    	max-width: 600px;
 	    	box-sizing:border-box;
-	    	margin: auto;
+	    	margin: 0 auto 10px;
 		}
-
+			.content .field label{
+				text-transform: uppercase;
+				letter-spacing: 2px;
+		    	font-weight: 800;
+			}
 .header{
 	overflow: hidden;
 	widows: 100%;
 	height: 320px;
 	padding:0;
+	border-bottom: 3px solid #f1c854;
 }
 	.sections .header .slider{
 		position: relative;
@@ -544,6 +588,7 @@ option, select{
 		min-height: 420px;
 		height: 60vh;
 		padding:0;
+		border-bottom: 3px solid #f1c854;
 	}
 	.slider-overlay {
 	    position: absolute;
@@ -576,7 +621,7 @@ option, select{
 			    background-size: contain;
 			    background-position: center;
 			    background-repeat: no-repeat;
-			    margin: 0 auto 0;
+			    margin: 20px auto 0;
 			    z-index: 1;
 			    padding-bottom:0px;
 			}
@@ -843,7 +888,7 @@ option, select{
 				line-height: 16px;
 				text-align: center;
 				font-weight: bold;
-				color: #fff;
+				color: #f1c854;
 				box-sizing: border-box;
 				letter-spacing: 1px;
 				box-sizing: border-box;
@@ -988,6 +1033,7 @@ option, select{
 			height:300px;
 			object-fit: cover;
 		}
+
 	.description{
 		width:100%;
 		padding-left: 320px;
@@ -1065,19 +1111,41 @@ option, select{
 			margin: 20px 0 20px 0;
 
 		}
+		.content .big{
+			display: block;
+		  font-size: 24px;
+		  color: #fff;
+		  font-weight: 800;
+		  text-transform: uppercase;
+		  line-height: 1.2;
+		  text-align: center;
+		  z-index: 5;
+		  margin: 10px 0 0 0;
+		}
+		.content .sbig{
+		display: block;
+		  font-size: 18px;
+		  color: #fff;
+		  font-weight: 600;
+		  text-transform: uppercase;
+		  line-height: 1.2;
+		  text-align: center;
+		  z-index: 5;
+		  margin: 10px 0 0 0;
+		}
 		.content .menu{
 			overflow: hidden;
 			width:100%;
-			max-width: 1000px;
+			max-width: 1200px;
 			margin: auto;
+			text-align: center;
 		}
 			.content .menu a{
 				width:250px;
-				display: block;
-				float:left;
+				display: inline-block;
 			    font-size: 16px;
 			    line-height: 50px;
-			    font-weight: bold;
+			    font-weight: 600;
 			    text-transform: uppercase;
 			    letter-spacing: 2px;
 			    text-decoration: none;
@@ -1091,8 +1159,191 @@ option, select{
 				background-position: left center;
 				box-sizing: border-box;
 				margin:10px 0 10px 0;
+				text-align: left;
+		}
+.classictable{
+	width:100%;
+	max-width: 1200px;
+	margin:auto;
+	overflow: hidden;
+}
+	.classictable .iteam{
+		position: relative;
+		overflow: hidden;
+		width:100%;
+		margin:20px auto 0px;
+		padding:20px 0 20px 0;
+		border-bottom: 1px solid rgba(255,255,255,0.2);
+	}
+			.classictable .iteam .photo{
+				width:100px;
+				height: 100px;
+				background: #000;
+				float:left;
+				border-radius: 3px;
+			}
+				.classictable .iteam .photo{
+					position: relative;
+					width:100px;
+					height: 100px;
+					background: #000;
+					float:left;
+					overflow: hidden;
+					box-sizing: border-box;
+					border: 3px solid #fff;
+				}
+				.classictable .iteam .photo:after{
+					content: '';
+					position: absolute;
+					top:0;
+					left:0;
+					width:100px;
+					height: 100px;
+					box-shadow: inset 0px 0 30px rgba(0,0,0,1);
+				}
+
+			.classictable .iteam .title{
+				position: absolute;
+				top:20px;
+				left:0;
+				padding:0 20px 0 120px;
+				box-sizing: border-box;
+			}
+
+			.classictable .iteam .time{
+				position: absolute;
+				bottom:20px;
+				left:0;
+				padding:0 20px 0 120px;
+				box-sizing: border-box;
+			}
+
+			.classictable .iteam .price{
+				position: absolute;
+				bottom:20px;
+				left:0px;
+				padding:0 0px 0 120px;
+				font-size:16px; 
+				line-height: 16px;
+				text-align: center;
+				font-weight: bold;
+				color: #f1c854;
+				box-sizing: border-box;
+				letter-spacing: 1px;
+				box-sizing: border-box;
+			}
+
+				.classictable .iteam .price span{
+					font-size:12px; 
+				}
+			
+			.classictable .iteam .add_to_cart{
+				position: absolute;
+				bottom:20px;
+				right:0px;
+				width:100px;
+				height:45px;
+				padding:10px;
+				box-sizing: border-box;
+				background: #f1c854 url(/assets/ico_cart_b.svg) no-repeat;
+				background-size: 30px;
+				background-position: 36px 12px;
+				border-radius: 3px;
+			}
+
+	.user-images{
+		width:300px;
+		height:300px;
+		overflow:hidden;
+		box-sizing: border-box;
+		background: #000;
+	    border: 3px solid #fff;
+	    border-radius: 100%;
+	    margin: auto;
+	}
+		.user-images img{
+			width:300px;
+			height:300px;
+			object-fit: cover;
 		}
 
+	.user-info{
+		margin: auto;
+		overflow: hidden;
+		width: 100%;
+		max-width: 500px;
+	}
+		.user-info .bs{
+			display: block;
+		    width: 100%;
+		    max-width: 500px;
+		    margin: 20px auto 20px;
+		    overflow: hidden;
+		}
+			.user-info .bs .bonuses{
+				display: block;
+			    width: 48%;
+			    padding: 5px 0 0 0;
+			    background: #f1c854;
+			    box-sizing: border-box;
+			    margin: auto;
+			    border-radius: 3px;
+			    font-size: 36px;
+			    font-weight: 800;
+			    float: left;
+			    margin-right: 4%;
+			    text-align: center;
+			    color: #000;
+			    height: 76px;
+			    border:5px solid #f1c854;
+			}
+			.user-info .sale{
+				display: block;
+			    width: 48%;
+			    padding: 5px 0 0 0;
+			    background: transparent;
+			    box-sizing: border-box;
+			    margin: auto;
+			    border-radius: 3px;
+			    font-size: 36px;
+			    font-weight: 800;
+			    float: left;
+			    text-align: center;
+			    color: #fff;
+			    border:5px solid #f1c854;
+			    height: 76px;
+			}
+
+			.user-info .bs .bonuses span, .user-info .sale span{
+				display: block;
+				font-size: 18px;
+			}
+.helplinks{
+	text-align: center;
+	margin:20px 0 0 0;
+}
+	.helplinks a{
+		font-size: 16px;
+	}
+#error_explanation{
+	width:100%;
+	border:2px solid red;
+	background: rgba(0,0,0,0.5);
+	margin:0 0 20px 0;
+	box-sizing: border-box;
+	padding:10px;
+}
+	#error_explanation h2{
+		margin:0;
+	}
+	#error_explanation ul li{
+		text-align: center;
+	}
+
+.map{
+	width:100%;
+	margin:20px auto 0;
+}
 .footer{
 	width:100%;
 	margin:auto;
@@ -1131,10 +1382,51 @@ option, select{
 .admin_button{
 	display: none;
 }
+
+.photos{
+	width:1200px;
+	overflow: hidden;
+	margin: 20px auto 20px;
+}
+	.photos div{
+		float:left;
+		width:300px;
+		height:300px;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+		.photos div img{
+			width: 280px;
+			height: 280px;
+			background:#000;
+		}
+
 @-webkit-keyframes bugfix {
     to {
       padding: 0;
     }
+}
+@media screen and (max-width: 1200px) {
+	.back{
+	    left: 20px;
+	}
+	.phonen{
+	    right: 20px;
+	}
+	.nav-toggle-on{
+	    left: 20px;
+	}
+	.photos{
+		width:1000px;
+	}
+		.photos div{
+			width:250px;
+			height:250px;
+		}
+			.photos div img{
+				width: 230px;
+				height: 230px;
+			}
 }
 @media screen and (max-width: 980px) {
 	.content{
@@ -1143,8 +1435,23 @@ option, select{
 	.table{
 		max-width: 640px; 
 	}
+
+	.photos{
+		width:640px;
+	}
+		.photos div{
+			width:160px;
+			height:160px;
+		}
+			.photos div img{
+				width: 140px;
+				height: 140px;
+			}
 }
 @media screen and (max-width: 660px) {
+	.phonen{
+		font-size: 20px;
+	}
 	.content{
 		width:320px;
 	}
@@ -1163,6 +1470,17 @@ option, select{
 	.table{
 		max-width: 320px; 
 	}
+	.photos{
+		width:320px;
+	}
+		.photos div{
+			width:160px;
+			height:160px;
+		}
+			.photos div img{
+				width: 140px;
+				height: 140px;
+			}
 }
 @media screen and (max-width: 480px) {
 	.content{

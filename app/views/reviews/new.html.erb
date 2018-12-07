@@ -1,0 +1,11 @@
+<section class="news">
+<%= render partial: 'application/navbar', locals: {back: false}%>
+<%= render partial: 'application/header', locals: {h1:"Оставить отзыв", h1up:"Contacts"}%>
+<div class="content">
+	<div class="text">
+		<p class="center">Товарищи! начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач.</p>
+		<%= render 'form', review: @review %>
+	</div>
+</div>
+
+<%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>

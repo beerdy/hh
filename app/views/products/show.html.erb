@@ -17,7 +17,7 @@
       <%= @product.description %>
       <p>Состав: <%= @product.slave %></p>
       Вес: <%= @product.image %>
-      <div class="price">400<span>руб.</span></div>
+      <div class="price"><%= @product.link %><span>руб.</span></div>
       <%= link_to '', cart_item_add_path(:product_id => @product.id), class: 'js-cart-item-add add_to_cart', method: :post, remote: true %>
     </div>
 <%= link_to 'Edit', edit_product_path(@product) %> |

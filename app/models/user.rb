@@ -35,6 +35,9 @@ class User
   field :bonuses,           type: Integer, default: 300
   field :percent,           type: Integer, default: 3
 
+  has_many :reviews, dependent: :destroy
+  has_many :reservations, dependent: :destroy
+
 
   ## Trackable
   # field :sign_in_count,      type: Integer, default: 0

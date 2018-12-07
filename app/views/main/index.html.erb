@@ -8,24 +8,31 @@
 	         <div class="zal">
 	         	<div class="zal-box">
 		    		<a href="/pages/dorado" class="dorado"></a>
-		    		<a href="/pages/bavaria" class="bavaria"></a>
+		    		<a href="/pages/bavariya" class="bavaria"></a>
 		    	</div>
 	    	</div>
 			</div>
             <ul class="slidewrapper">
-                <li class="slide" style="background-image:url('/assets/slide1.jpg')"></li>
-				<li class="slide" style="background-image:url('/assets/slide1.jpg')"></li>
-				<li class="slide" style="background-image:url('/assets/slide1.jpg')"></li>
-				<li class="slide" style="background-image:url('/assets/slide1.jpg')"></li>
+                <li class="slide" style="background-image:url('/assets/slide1.jpg')">
+                	<video id="video" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto">
+					<source src="book.mp4"></source>
+					<source src="book.webm" type="video/webm"></source>
+					</video>
+                </li>
             </ul>
             <div class="prev-next-btns">
                 <div class="prev-btn"></div>
                 <div class="next-btn"></div>
             </div>
     </div>
-    <div class="welcome">
+    <div class="content">
     	<h1 class="animated fadeInDown"><div class="up">Welcome</div>Добро пожаловать в Хмельхаус!</h1>
-    	<a href="/" class="button">Забронировать столик</a>
+    	<a href="/reservations/new" class="button">Забронировать столик</a>
+    	<div class="text">
+    		<p>
+    			Товарищи! начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач. Товарищи! новая модель организационной деятельности требуют определения и уточнения направлений прогрессивного развития. Не следует, однако забывать, что рамки и место обучения кадров требуют определения и уточнения систем массового участия.
+    		</p>
+    	</div>
     	 <%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
     </div>
 </section>

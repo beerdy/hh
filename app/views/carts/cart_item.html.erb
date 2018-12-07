@@ -1,3 +1,8 @@
+<section class="news">
+<%= render partial: 'application/navbar', locals: {back: false}%>
+<%= render partial: 'application/header', locals: {h1:"Мой заказ", h1up:"Contacts"}%>
+<div class="content">
+  <div class="text">
 <%= form_with(model: @order, local: true) do |form| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
@@ -11,14 +16,26 @@
     </div>
   <% end %>
 
-  <ul>
+  <div class="classictable">
   <% current_cart.cart.each_with_index do |cart,index| %>
-    <li><%= "#{cart.product.title} (#{cart.product.description}) - #{cart.product_quantify}шт." %></li>
+
+
+       <div class="iteam">
+        <%= link_to cart.product do %>
+          <div class="photo"><%= image_tag (has_image?(cart.product.photos[0]) ? get_image(cart.product.photos[0]).image.url(:thumb) : 'backgrounds/no-image320x240.png'), height: '50'%></div>
+          <div class="title"><h3><%= cart.product.title %></h3></div>
+          <div class="price"><%= cart.product.link %><span>руб.</span> x <span class="count"><%= cart.product_quantify%></span></div>
+          <%= link_to '', cart_item_add_path(:product_id => cart.product.id), class: 'js-cart-item-add add_to_cart', method: :post, remote: true %>
+        <% end %>
+      </div>
+
     <%= form.hidden_field :products, id: :order_products, type: 'hidden' %>
     <input id="order_products" type="hidden" value='<%= "#{cart.product_id}_#{cart.product_quantify}" %>' name="product<%=index%>">
   <% end %>
-  </ul>
+  </div>
 
+  <h2>Контактная информация</h2>
+  
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title, id: :order_title %>
@@ -50,3 +67,7 @@
   </div>
 <% end %>
 
+  </div>
+</div>
+
+<%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>

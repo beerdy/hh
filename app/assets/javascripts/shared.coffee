@@ -18,17 +18,3 @@ document.addEventListener "turbolinks:load", () ->
   # dropzone discover for turbolinks
   # Dropzone.discover()
   # END dropzone discover for turbolinks
-
-  $('.product-images img').on 'click', (e) ->
-    e.preventDefault()
-    href = $(this).attr('src')
-    mrgallery.open href
-    false
-  return
-  mrgallery = 
-    open: (href) ->
-      $('body').append '<div class="MrGallery animated fadeIn" onclick="mrgallery.close(this)"><div class="ImgOpened animated jackInTheBox" style="background-image:url(\'' + href + '\');"></div></div>'
-      false
-    close: (e) ->
-      $(e).remove()
-      false
