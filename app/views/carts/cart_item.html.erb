@@ -26,6 +26,7 @@
           <div class="title"><h3><%= cart.product.title %></h3></div>
           <div class="price"><%= cart.product.link %><span>руб.</span> x <span class="count"><%= cart.product_quantify%></span></div>
           <%= link_to '', cart_item_add_path(:product_id => cart.product.id), class: 'js-cart-item-add add_to_cart', method: :post, remote: true %>
+          <input id="product_quantify" type="number" name="product_quantify" value=1>
         <% end %>
       </div>
 

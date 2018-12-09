@@ -40,12 +40,13 @@ Rails.application.routes.draw do
       get :get
       get :move
       get :add
+
     end
   end
-
-  get 'bonuses/get/:card_id', to: 'bonuses#get'
+  get 'bonuses/prize/:card_id', to: 'bonuses#get'
   get 'bonuses/move/:card_id_from/:card_id_to/:sum', to: 'bonuses#move'
   get 'bonuses/add/:card_id/:sum', to: 'bonuses#add'
+  post 'bonuses/prize', controller: 'bonuses',  action: 'prize', as: "bonuses_prize"            # add position by id and count in post request
     
   post 'cart_item/add', controller: 'carts',  action: 'add', as: "cart_item_add"            # add position by id and count in post request
   delete 'cart_item/delete', controller: 'carts',  action: 'delete', as: "cart_item_delete" # delete position by id all quantify

@@ -64,6 +64,25 @@ class BonusesController < ApplicationController
     @some = "Response #{res.code} #{res.message}: #{res.body}"    
   end
 
+  def prize
+    params[:bonuse] = params
+    user_source = current_user
+    user_distantion = User.where( card: bonuse_params[:card] ).first
+    
+    respond_to do |format|
+      if user_source.bonuses < bonuse_params[:count].to_i # and user_source.card != bonuse_params[:card]
+        #format.html { render :edit }
+        format.json { render json: { error: 'Ошибка бонусной системы'}, status: :unprocessable_entity }
+      else
+        user_distantion.inc( bonuses: bonuse_params[:count].to_i)
+        user_source.inc( bonuses: bonuse_params[:count].to_i*-1)
+
+        #format.html { redirect_to current_user, notice: 'Bonuse was successfully prized' }
+        format.json { render :show, status: :ok}
+      end
+    end
+  end
+
   # GET /bonuses
   # GET /bonuses.json
   def index
@@ -132,6 +151,6 @@ class BonusesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bonuse_params
-      params.require(:bonuse).permit(:used_id, :fio, :birthday)
+      params.require(:bonuse).permit(:used_id, :fio, :birthday, :count, :card)
     end
 end

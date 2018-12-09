@@ -77,17 +77,22 @@ class CartsController < ApplicationController
           format.json { render json: cart.errors, status: :unprocessable_entity }
         end
       else
-        # current_user.id: #{current_user.id}, finded cart: #{cart}
+        product_quantify = params[:product_quantify].to_i
+        cart.destroy if cart.product_quantify+product_quantify <= 0 # drop item -
         cart.inc(product_quantify: params[:product_quantify].to_i)
         format.json { render json: {:status => :ok} }
       end
     end
   end
 
+  def dec
+  end
+
   def delete
   end
   def remove
   end
+
   def cart_item
     @order = Order.new
     # @cart = Cart.where(user_id: current_user.id) #moved to: ApplicationController

@@ -1,6 +1,9 @@
 class User
   include Mongoid::Document
   include Mongoid::Paperclip
+
+  #before_save :disable_edit
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
@@ -58,4 +61,8 @@ class User
   # field :locked_at,       type: Time
 
   #has_one :cart
+  private
+    def convert_title_to_url
+      self.url = self.title.to_slug_param if self.url == nil or self.url == ''
+    end
 end
