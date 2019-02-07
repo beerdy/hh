@@ -15,19 +15,21 @@
       </ul>
     </div>
   <% end %>
-
+<% if current_cart.count == 0 %>
+<h2>ВАША КОРЗИНА ПУСТА<h2>
+  <% end %>
+<% if current_cart.count > 0 %>
   <div class="classictable">
   <% current_cart.cart.each_with_index do |cart,index| %>
 
-
        <div class="iteam">
-        <%= link_to cart.product do %>
-          <div class="photo"><%= image_tag (has_image?(cart.product.photos[0]) ? get_image(cart.product.photos[0]).image.url(:thumb) : 'backgrounds/no-image320x240.png'), height: '50'%></div>
+          <div class="photo"><%= image_tag (has_image?(cart.product.photos[0]) ? get_image(cart.product.photos[0]).image.url(:thumb) : 'backgrounds/no-image320x240.png'), height: '100'%></div>
           <div class="title"><h3><%= cart.product.title %></h3></div>
-          <div class="price"><%= cart.product.link %><span>руб.</span> x <span class="count"><%= cart.product_quantify%></span></div>
-          <%= link_to '', cart_item_add_path(:product_id => cart.product.id), class: 'js-cart-item-add add_to_cart', method: :post, remote: true %>
-          <input id="product_quantify" type="number" name="product_quantify" value=1>
-        <% end %>
+          <div class="price"><%= cart.product.link %><span>руб.</span> x 
+            <span class="count"><%= cart.product_quantify%></span></div>
+          <%= link_to '+', cart_item_add_path(:product_id => cart.product.id), class: 'js-cart-item-plus plus_to_cart', method: :post, remote: true %>
+          <%= link_to '-', cart_item_add_path(:product_id => cart.product.id), class: 'js-cart-item-minus minus_to_cart', method: :post, remote: true %>
+          <%= link_to '', cart_item_add_path(:product_id => cart.product.id), class: 'js-cart-item-del del_to_cart', method: :post, remote: true %>
       </div>
 
     <%= form.hidden_field :products, id: :order_products, type: 'hidden' %>
@@ -69,6 +71,7 @@
 <% end %>
 
   </div>
+  <% end %>
 </div>
 
 <%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>

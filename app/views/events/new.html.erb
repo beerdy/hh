@@ -1,5 +1,12 @@
-<h1>New Event</h1>
+<section class="news">
+<%= render partial: 'application/navbar', locals: {back: false}%>
+<%= render partial: 'application/header', locals: {h1:"Добавить новость", h1up:"User"}%>
+<div class="content">
+  <div class="page">
 
 <%= render 'form', event: @event, gallery: @gallery  %>
 
 <%= link_to 'Back', events_path %>
+
+<%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
+</section>

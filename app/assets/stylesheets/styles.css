@@ -912,6 +912,20 @@ option, select{
 				border-radius: 3px;
 			}
 
+			.table .iteam .refresh_to_cart{
+				position: absolute;
+				bottom:20px;
+				left:160px;
+				width:100px;
+				height:45px;
+				padding:10px;
+				box-sizing: border-box;
+				background: #f1c854 url(/assets/ico_cart_b.svg) no-repeat;
+				background-size: 30px;
+				background-position: 36px 12px;
+				border-radius: 3px;
+			}
+
 .newsiteam{
 
 }
@@ -1237,18 +1251,53 @@ option, select{
 					font-size:12px; 
 				}
 			
-			.classictable .iteam .add_to_cart{
+			.classictable .iteam .del_to_cart{
 				position: absolute;
 				bottom:20px;
 				right:0px;
-				width:100px;
+				width:45px;
 				height:45px;
 				padding:10px;
+				font-size: 24px;
+				line-height: 45px;
 				box-sizing: border-box;
-				background: #f1c854 url(/assets/ico_cart_b.svg) no-repeat;
 				background-size: 30px;
 				background-position: 36px 12px;
 				border-radius: 3px;
+				text-decoration:none;
+			}
+			.classictable .iteam .del_to_cart:after{
+			    content: '\2715';
+			}
+			.classictable .iteam .plus_to_cart{
+				position: absolute;
+				bottom:20px;
+				right:45px;
+				width:45px;
+				height:45px;
+				padding:10px;
+				font-size: 36px;
+				line-height: 45px;
+				box-sizing: border-box;
+				background-size: 30px;
+				background-position: 36px 12px;
+				border-radius: 3px;
+				text-decoration:none;
+			}
+			.classictable .iteam .minus_to_cart{
+				position: absolute;
+				bottom:20px;
+				right:90px;
+				width:45px;
+				height:45px;
+				padding:10px;
+				font-size: 36px;
+				line-height: 45px;
+				box-sizing: border-box;
+				background-size: 30px;
+				background-position: 36px 12px;
+				border-radius: 3px;
+				text-decoration:none;
 			}
 
 	.user-images{
