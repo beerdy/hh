@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: 
 */
 
-@import image-url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800&subset=cyrillic,cyrillic-ext');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800&subset=cyrillic,cyrillic-ext');
 
 @font-face {
 	font-family: 'Got';
