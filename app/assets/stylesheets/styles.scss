@@ -714,12 +714,12 @@ option, select{
 
 	.prev-btn {
 	    left: 20px;
-	    background:image-url('../img/left-arrow.png');
+	    background-image:image-url('../img/left-arrow.png');
 	}
 
 	.next-btn {
 	    right: 20px;
-	     background:image-url('../img/right-arrow.png');
+	     background-image:image-url('../img/right-arrow.png');
 	}
 
 	.nav-btns {
@@ -750,7 +750,7 @@ option, select{
 		width:100%;
 		height:40vh;
 		min-height:270px; 
-		background:image-url('bg.jpg');
+		background-image:image-url('bg.jpg');
 		border-top:3px solid #f1c854;
 		box-sizing: border-box;
 	}
@@ -772,7 +772,7 @@ option, select{
 			float:left;
 			width:45%;
 			height:100px;
-			background:image-url('logo_d.svg') no-repeat center;
+			background-image:image-url('logo_d.svg') no-repeat center;
 			background-size: contain;
 		}
 		.zal .bavaria{
@@ -780,7 +780,7 @@ option, select{
 			float:right;
 			width:45%;
 			height:100px;
-			background:image-url('logo_b.svg') no-repeat center;
+			background-image:image-url('logo_b.svg') no-repeat center;
 			background-size: contain;
 		}
 
@@ -906,7 +906,7 @@ option, select{
 				height:45px;
 				padding:10px;
 				box-sizing: border-box;
-				background: #f1c854 image-url(ico_cart_b.svg) no-repeat;
+				background: #f1c854 image-url('ico_cart_b.svg') no-repeat;
 				background-size: 30px;
 				background-position: 36px 12px;
 				border-radius: 3px;
@@ -920,7 +920,7 @@ option, select{
 				height:45px;
 				padding:10px;
 				box-sizing: border-box;
-				background: #f1c854 image-url(ico_cart_b.svg) no-repeat;
+				background: #f1c854 image-url('ico_cart_b.svg') no-repeat;
 				background-size: 30px;
 				background-position: 36px 12px;
 				border-radius: 3px;
@@ -1020,7 +1020,7 @@ option, select{
 		margin: 0 0 5px;
 	}
 	.search ul:hover .current {
-		background:image-url(images/icon-check.png) no-repeat 10px 7px;
+		background-image:image-url('images/icon-check.png') no-repeat 10px 7px;
 	}
  
 .page{
@@ -1077,7 +1077,7 @@ option, select{
 		height:45px;
 		padding:10px;
 		box-sizing: border-box;
-		background: #f1c854 image-url(ico_cart_b.svg) no-repeat;
+		background: #f1c854 image-url('ico_cart_b.svg') no-repeat;
 		background-size: 30px;
 		background-position: 36px 12px;
 		border-radius: 3px;
@@ -1112,7 +1112,7 @@ option, select{
 			display: block;
 			width:100%;
 			height:100px;
-			background:image-url('logo_d.svg') no-repeat center;
+			background-image:image-url('logo_d.svg') no-repeat center;
 			background-size: contain;
 			margin: 20px 0 20px 0;
 		}
@@ -1120,7 +1120,7 @@ option, select{
 			display: block;
 			width:100%;
 			height:100px;
-			background:image-url('logo_b.svg') no-repeat center;
+			background-image:image-url('logo_b.svg') no-repeat center;
 			background-size: contain;
 			margin: 20px 0 20px 0;
 
@@ -1168,7 +1168,7 @@ option, select{
 			    background-position: left center;
 			    background-size: 32px;
 			    padding: 0px 0 0px 50px;
-				background:image-url('ico_menu_.svg') no-repeat center;
+				background-image:image-url('ico_menu_.svg') no-repeat center;
 				background-size:50px;
 				background-position: left center;
 				box-sizing: border-box;
