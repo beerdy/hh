@@ -48,27 +48,27 @@
 </script>
 <div class="row">
   <div class="col-md-6">
-    <div class="fallback">
-      <%= form_with(model: gallery, local: true, html: {class: "dropzone", id: "myAwesomeDropzone"}) do |form| %>
-        <% if gallery.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
+    <div class="field">
+      <div class="fallback">
+        <%= form_with(model: gallery, local: true, html: {class: "dropzone", id: "myAwesomeDropzone"}) do |form| %>
+          <% if gallery.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
 
-            <ul>
-            <% gallery.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-            </ul>
+              <ul>
+              <% gallery.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="fallback">
+            <input name="file" type="file" multiple />
           </div>
-        <% end %>
-
-        <div class="fallback">
-          <input name="file" type="file" multiple />
-        </div>
-      <% end if gallery %>
+        <% end if gallery %>
+      </div>
     </div>
-  </div>
-  <div class="col-md-6">
     <%= form_for product, html: { class: "form-horizontal", multipart: true, id: 'product-form' }  do |form| %>
       <% if product.errors.any? %>
         <div id="error_explanation">

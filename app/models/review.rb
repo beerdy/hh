@@ -4,7 +4,7 @@ class Review
   field :phone, type: String
   field :email, type: String
   field :description, type: String
-  field :user_id, type: Integer
+  field :user_id, type: BSON::ObjectId
 
-  belongs_to :user
+  #belongs_to :user
 end

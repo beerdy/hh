@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  include AuthFake
+  before_action :check_auth
+  
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :set_gallery, only: [:new, :edit, :update]
 
@@ -15,11 +18,14 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
+    unless current_user.admin? then redirect_to root_path; return false; end
+
     @product = Product.new
   end
 
   # GET /products/1/edit
   def edit
+    unless current_user.admin? then redirect_to root_path; return false; end
   end
 
   def search
@@ -33,6 +39,8 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    unless current_user.admin? then redirect_to root_path; return false; end
+
     @product = Product.new(product_params)
 
     respond_to do |format|
@@ -49,6 +57,8 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    unless current_user.admin? then redirect_to root_path; return false; end
+
     # use prepared model for update
     product = Product.new(product_params)
 
@@ -66,6 +76,8 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }

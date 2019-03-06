@@ -86,14 +86,13 @@ body {
 	padding:0 !important;
 	text-align: left;
 	background:#000 image-url('bg.jpg') center;
-	-webkit-animation: bugfix infinite 1s;
 	-webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
-body #map{
+.map{
     -webkit-transition: none;
     -moz-transition: none;
     -ms-transition: none;
@@ -248,7 +247,8 @@ option, select{
 
 /*МЕНЮ*/
 .nav {
-    width: 320px;
+	box-sizing: border-box;
+    width: 360px;
     min-width: 280px;
     height: 100%;
     position: fixed;
@@ -265,6 +265,7 @@ option, select{
     z-index: 2000;
     border-right:3px solid #3b2010;
 }
+
 	.nav:after{
 		content:"";
 	    width: 100%;
@@ -414,7 +415,7 @@ option, select{
 	background-repeat: no-repeat;
 }
 .phonen{
-	width: 200px;
+	width: 240px;
 	height: 40px;
 	display: block;
 	position: absolute;
@@ -542,7 +543,7 @@ option, select{
 	}
 		.text{
 	    	width:100%;
-	    	max-width: 1200px;
+	    	max-width: 900px;
 	    	margin: auto;
 	    	padding:0 15px 0 15px;
 	    	box-sizing: border-box;
@@ -594,7 +595,7 @@ option, select{
 	    position: absolute;
 	    width:100%;
 	    height:100%;
-	    background: rgba(0,0,0,0.7);
+	    background: rgba(0,0,0,0.65);
 	    z-index: 1;
 	}
 		.slider-overlay a.logo{
@@ -640,7 +641,7 @@ option, select{
 
 	.slidewrapper {
 	    position: relative;
-	    width: calc(100% * 4);
+	    width: 100%;
 	    height: 100%;
 	    -webkit-transition: 1s;
 	    -o-transition: 1s;
@@ -656,8 +657,27 @@ option, select{
 	}
 
 	.slide {
-		position: relative;
-	    width: calc(100%/4);
+		position: absolute;
+		top:0;
+		left:0;
+	    width: 100%;
+	    height: 100%;
+	    list-style: none;
+	    display: inline;
+	    float: left;
+	    background-position: center;
+	    background-size: cover;
+      opacity:0; 
+	  animation-name: fade; 
+	  animation-duration: 20s; 
+	  animation-iteration-count: infinite; 
+	}
+
+	.slideoff {
+		position: absolute;
+		top:0;
+		left:0;
+	    width: 100%;
 	    height: 100%;
 	    list-style: none;
 	    display: inline;
@@ -665,6 +685,15 @@ option, select{
 	    background-position: center;
 	    background-size: cover;
 	}
+
+	.slide img{
+		width:100%;
+		height: 100%;
+		display: block;
+		background-size: cover;
+		object-fit: cover;
+	}
+
 		.slide .overlay{
 			position: absolute;
 			bottom: 0;
@@ -772,7 +801,7 @@ option, select{
 			float:left;
 			width:45%;
 			height:100px;
-			background-image:image-url('logo_d.svg') no-repeat center;
+			background: image-url('logo_d.svg') no-repeat center;
 			background-size: contain;
 		}
 		.zal .bavaria{
@@ -780,7 +809,7 @@ option, select{
 			float:right;
 			width:45%;
 			height:100px;
-			background-image:image-url('logo_b.svg') no-repeat center;
+			background: image-url('logo_b.svg') no-repeat center;
 			background-size: contain;
 		}
 
@@ -1107,12 +1136,11 @@ option, select{
 			margin: auto;
 		}
 
-
 		.content .dorado{
 			display: block;
 			width:100%;
 			height:100px;
-			background-image:image-url('logo_d.svg') no-repeat center;
+			background: image-url('logo_d.svg') no-repeat center;
 			background-size: contain;
 			margin: 20px 0 20px 0;
 		}
@@ -1120,7 +1148,7 @@ option, select{
 			display: block;
 			width:100%;
 			height:100px;
-			background-image:image-url('logo_b.svg') no-repeat center;
+			background:image-url('logo_b.svg') no-repeat center;
 			background-size: contain;
 			margin: 20px 0 20px 0;
 
@@ -1168,7 +1196,7 @@ option, select{
 			    background-position: left center;
 			    background-size: 32px;
 			    padding: 0px 0 0px 50px;
-				background-image:image-url('ico_menu_.svg') no-repeat center;
+				background: image-url('ico_menu_.svg') no-repeat center;
 				background-size:50px;
 				background-position: left center;
 				box-sizing: border-box;
@@ -1439,22 +1467,57 @@ option, select{
 }
 	.photos div{
 		float:left;
-		width:300px;
-		height:300px;
 		padding: 10px;
 		box-sizing: border-box;
 	}
 		.photos div img{
+			box-sizing: border-box;
 			width: 280px;
 			height: 280px;
 			background:#000;
+			border:3px solid #f1c854;
+			background-size: cover;
+			object-fit: cover;
 		}
 
+img.tobig{
+	cursor: pointer;
+}
+img.tobig:hover{
+	background-size: contain;
+}
+.balli{
+	box-sizing: border-box;
+	border: 2px solid #f1c854;
+	padding:20px;
+}
 @-webkit-keyframes bugfix {
     to {
       padding: 0;
     }
 }
+@keyframes fade {
+0%{ opacity: 0; }
+10%{ opacity: 1; }
+20%{ opacity: 1; }
+30%{ opacity: 1; }
+40%{ opacity: 0; }
+50%{ opacity: 0; }
+60%{ opacity: 0; }
+70%{ opacity: 0; }
+80%{ opacity: 0; }
+90%{ opacity: 0;}
+100% { opacity: 0; }
+}
+.slide:nth-child(1) { animation-delay: 0s;  }
+.slide:nth-child(2) { animation-delay: 3s;  }
+.slide:nth-child(3) { animation-delay: 6s;  }
+.slide:nth-child(4) { animation-delay: 9s;  }
+.slide:nth-child(5) { animation-delay: 12s;  }
+.slide:nth-child(6) { animation-delay: 15s;  }
+.slide:nth-child(7) { animation-delay: 18s;  }
+.slide:nth-child(8) { animation-delay: 21s;  }
+
 @media screen and (max-width: 1200px) {
 	.back{
 	    left: 20px;
@@ -1554,5 +1617,8 @@ option, select{
     .nav-toggle {
 	  position: absolute;
 	  left: 280px;
+	}
+	.nav-toggle-off {
+	    left: 230px;
 	}
 }

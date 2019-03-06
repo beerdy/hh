@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /reservations
   # GET /reservations.json
   def index
@@ -25,9 +26,11 @@ class ReservationsController < ApplicationController
   # POST /reservations.json
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = current_user.id
 
     respond_to do |format|
       if @reservation.save
+        UserMailer.reservation_email(@reservation).deliver!
         format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
         format.json { render :show, status: :created, location: @reservation }
       else
@@ -69,6 +72,6 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:name, :phone, :email, :description, :user)
+      params.require(:reservation).permit(:name, :phone, :email, :description, :user_id)
     end
 end

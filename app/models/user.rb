@@ -61,6 +61,13 @@ class User
   # field :locked_at,       type: Time
 
   #has_one :cart
+  def email?(email)
+    self.email == email.to_s
+  end
+  def admin?
+    email?('candream@ya.ru') || email?('ss48.a@yandex.ru')
+  end
+
   private
     def convert_title_to_url
       self.url = self.title.to_slug_param if self.url == nil or self.url == ''

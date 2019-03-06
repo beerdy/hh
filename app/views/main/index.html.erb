@@ -13,12 +13,14 @@
 	    	</div>
 			</div>
             <ul class="slidewrapper">
-                <li class="slide" style="background-image:url('/assets/slide1.jpg')">
-                	<video id="video" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto">
-					<source src="book.mp4"></source>
-					<source src="book.webm" type="video/webm"></source>
-					</video>
-                </li>
+                <li class="slide"><%= image_tag("d01.jpg", class: "tobig", alt: "") %></li>
+                <li class="slide"><%= image_tag("b01.jpg", class: "tobig", alt: "") %></li>
+                <li class="slide"><%= image_tag("d02.jpg", class: "tobig", alt: "") %></li>
+                <li class="slide"><%= image_tag("b02.jpg", class: "tobig", alt: "") %></li>
+                <li class="slide"><%= image_tag("d03.jpg", class: "tobig", alt: "") %></li>
+                <li class="slide"><%= image_tag("b03.jpg", class: "tobig", alt: "") %></li>
+                <li class="slide"><%= image_tag("d04.jpg", class: "tobig", alt: "") %></li>
+                <li class="slide"><%= image_tag("b04.jpg", class: "tobig", alt: "") %></li>
             </ul>
             <div class="prev-next-btns">
                 <div class="prev-btn"></div>
@@ -27,10 +29,21 @@
     </div>
     <div class="content">
     	<h1 class="animated fadeInDown"><div class="up">Welcome</div>Добро пожаловать в Хмельхаус!</h1>
+        <div class="text">
+            <p style="text-align: center;">Ресторан Хмель Хаус – это удивительное место, сочетающее в себе возможность проведения нескольких видов отдыха и разных гастрономических предпочтений.</p>
+        </div>
     	<a href="/reservations/new" class="button">Забронировать столик</a>
+        <div class="photos">
+          <div class="photo-iteam"><%= image_tag("b02.jpg", class: "tobig", alt: "") %></div>
+          <div class="photo-iteam"><%= image_tag("d02.jpg", class: "tobig", alt: "") %></div>
+          <div class="photo-iteam"><%= image_tag("b01.jpg", class: "tobig", alt: "") %></div>
+          <div class="photo-iteam"><%= image_tag("d01.jpg", class: "tobig", alt: "") %></div>
+        </div>
     	<div class="text">
-    		<p>
-    			Товарищи! начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач. Товарищи! новая модель организационной деятельности требуют определения и уточнения направлений прогрессивного развития. Не следует, однако забывать, что рамки и место обучения кадров требуют определения и уточнения систем массового участия.
+            <h2>Ресторан включается в себя три зала.</h2>
+<p><h3>1 этаж – «Дорадо».</h3> Изысканный интерьер, винная комната и меропродукты и романтические вечера!</p>
+<p><h3>2 этаж – «Бавария».</h3> Роскошный большой зал, собственная пивоварня, европейское меню и шоу-программа.</p>
+<p><h3>Веранда</h3>При входе – атмосферная веранда, где действуют оба меню, а так же детская игровая площадка.</p>
     		</p>
     	</div>
     	 <%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>

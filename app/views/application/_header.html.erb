@@ -7,9 +7,16 @@
       </div>
       <ul class="slidewrapper"> 
         <%if defined?(image_url)=="local-variable"%>
-        <li class="slide" style="background-image:url('<%= image_url%>)"></li>
+        <li class="slide-off" style="background-image:url('<%= image_url%>)"></li>
         <%else%>
-        <li class="slide" style="background-image:url('/assets/slide1.jpg')"></li>
+        <li class="slide"><%= image_tag("d01.jpg", class: "tobig", alt: "") %></li>
+        <li class="slide"><%= image_tag("b01.jpg", class: "tobig", alt: "") %></li>
+        <li class="slide"><%= image_tag("d02.jpg", class: "tobig", alt: "") %></li>
+        <li class="slide"><%= image_tag("b02.jpg", class: "tobig", alt: "") %></li>
+        <li class="slide"><%= image_tag("d03.jpg", class: "tobig", alt: "") %></li>
+        <li class="slide"><%= image_tag("b03.jpg", class: "tobig", alt: "") %></li>
+        <li class="slide"><%= image_tag("d04.jpg", class: "tobig", alt: "") %></li>
+        <li class="slide"><%= image_tag("b04.jpg", class: "tobig", alt: "") %></li>
         <%end%>
       </ul>
   </div>

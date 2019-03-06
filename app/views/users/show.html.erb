@@ -28,13 +28,15 @@
         <%= @user.phone %>
       </p>
   </div>
+  <div class="balli">
   <%= form_with(model: @bonuse, local: true) do |form| %>
-    <%= link_to 'Передать', bonuses_prize_path, class: 'js-bonuses-prize', method: :post, remote: true %>
     Передать пользователю с картой:
     <%= form.number_field :card, id: :bonuses_card, value: 0 %>
     Количество бонусов:
     <%= form.number_field :card, id: :bonuses_quantify, value: 0 %>
+     <%= link_to 'Передать', bonuses_prize_path, class: 'js-bonuses-prize button', method: :post, remote: true %>
   <% end %>
+  </div>
 </div>
 
 <%= link_to 'Редактировать профиль', edit_user_path(@user), class: 'button' %>

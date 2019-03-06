@@ -1,5 +1,5 @@
 document.addEventListener("turbolinks:load", function(){
-  $(".product-images img").on("click", function(e) {
+  $("img.tobig").on("click", function(e) {
       var href = $(this).attr('src');
       mrgallery.winny(href);
       return false;

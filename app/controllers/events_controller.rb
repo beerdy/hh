@@ -1,9 +1,14 @@
 class EventsController < ApplicationController
+  include AuthFake
+  before_action :check_auth
+  
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :set_gallery, only: [:new, :edit, :update]
+  
 
   # GET /events
   # GET /events.json
+
   def index
     @events = Event.all
   end
@@ -15,11 +20,15 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
+    unless current_user.admin? then redirect_to root_path; return false; end
+
     @event = Event.new
   end
 
   # GET /events/1/edit
   def edit
+    unless current_user.admin? then redirect_to root_path; return false; end
+
   end
   def search
     if params[:tag]
@@ -31,6 +40,8 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    unless current_user.admin? then redirect_to root_path; return false; end
+
     @event = Event.new(event_params)
 
     respond_to do |format|
@@ -47,6 +58,8 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
+    unless current_user.admin? then redirect_to root_path; return false; end
+
     event = Event.new(event_params)
     respond_to do |format|
       if @event.update( event_params.merge!({photos: event.photos}) )
@@ -62,6 +75,8 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }

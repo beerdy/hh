@@ -1,5 +1,6 @@
 <div class="row">
   <div class="col-md-6">
+     <div class="field">
     <div class="fallback">
       <%= form_with(model: gallery, local: true, html: {class: "dropzone", id: "myAwesomeDropzone"}) do |form| %>
         <% if gallery.errors.any? %>
@@ -19,8 +20,6 @@
         </div>
       <% end if gallery %>
     </div>
-  </div>
-  <div class="col-md-6">
     <%= form_for event, html: { class: "form-horizontal", multipart: true, id: 'event-form' }  do |form| %>
       <% if event.errors.any? %>
         <div id="error_explanation">
