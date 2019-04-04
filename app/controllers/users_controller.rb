@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  include Bonuses
+  before_action :get_bonuse
+  
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users

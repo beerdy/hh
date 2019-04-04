@@ -23,6 +23,8 @@ module Hh
     
     config.i18n.default_locale = :ru
     
+    config.encoding = "utf-8"
+
     config.generators.stylesheets = false
     config.generators.javascripts = false
     # Settings in config/environments/* take precedence over those specified here.

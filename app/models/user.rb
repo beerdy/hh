@@ -41,6 +41,7 @@ class User
   has_many :reviews, dependent: :destroy
   has_many :reservations, dependent: :destroy
 
+  validates :card, uniqueness: true
 
   ## Trackable
   # field :sign_in_count,      type: Integer, default: 0

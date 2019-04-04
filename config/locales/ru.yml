@@ -9,6 +9,8 @@ ru:
           attributes:
             email:
               blank: '- поле электронного адреса должно быть заполнено'
+            card:
+              taken: '- карта уже зарегистрированна'
     attributes:
       user:
         image: 'Аватар'
@@ -19,12 +21,18 @@ ru:
         login: 'Вход'
         address: 'Адрес'
         phone: 'Телефон'
+        card: 'Ката лояльности'
         password_confirmation: 'Еще раз пароль'
-
       reservation:
-        email: "Email"
-        phone: 'Телефон'
-        description: 'Описание'
+        name: "Ваше Имя"
+        email: "Ваш Email"
+        phone: 'Ваш Телефон'
+        description: 'Комментарий'
         user: 'Пользователь'
       order:
         address: 'Адрес'
+      review:
+        name: "Ваше Имя"
+        email: "Ваш Email"
+        phone: 'Ваш Телефон'
+        description: 'Текст отзыва'

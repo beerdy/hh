@@ -8,24 +8,24 @@
     </div>
     <div class="user-info">
       <div class="bs">
-        <div class="bonuses"><%= @user.bonuses %> <span>баллов</span></div>
+        <div class="bonuses"><%= @data_1C["bonusSum"] %> <span>баллов</span></div>
         <div class="sale"><span>скидка </span><%= @user.percent %>%</div>
       </div>
       <p>
-        <strong>HB:</strong>
-        <%= @user.hb %>
+        <strong>ИФ:</strong>
+        <%= @user.fio %>
       </p>
       <p>
-        <strong>email:</strong>
+        <strong>Телефон:</strong>
+        <%= @user.phone %>
+      </p>
+      <p>
+        <strong>E-mail:</strong>
         <%= @user.email %>
       </p>
       <p>
-        <strong>card:</strong>
+        <strong>Карта лояльности:</strong>
         <%= @user.card %>
-      </p>
-      <p>
-        <strong>phone:</strong>
-        <%= @user.phone %>
       </p>
   </div>
   <div class="balli">
@@ -34,7 +34,7 @@
     <%= form.number_field :card, id: :bonuses_card, value: 0 %>
     Количество бонусов:
     <%= form.number_field :card, id: :bonuses_quantify, value: 0 %>
-     <%= link_to 'Передать', bonuses_prize_path, class: 'js-bonuses-prize button', method: :post, remote: true %>
+     <%= link_to 'Передать', bonuses_move_path, class: 'js-bonuses-prize button', method: :post, remote: true %>
   <% end %>
   </div>
 </div>

@@ -1,1 +1,14 @@
-[move] from 1C server: <%= @some %>
+<%= current_user.fio %><br>
+
+<%= form_with(model: @bonuse, local: true) do |form| %>
+  <ul>
+    <li>
+      <strong>Перевести бонусы (база 1С) на карту: </strong><%= form.number_field :card_id_to, id: :card_id_to %>
+    </li>
+  </ul>
+
+  <div class="actions">
+    <%= form.submit "Перевести" %>
+  </div>
+
+<% end %>

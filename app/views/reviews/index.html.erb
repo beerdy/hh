@@ -1,3 +1,9 @@
+<section class="news">
+<%= render partial: 'application/navbar', locals: {back: false}%>
+<%= render partial: 'application/header', locals: {h1:"Оставить отзыв", h1up:"Contacts"}%>
+<div class="content">
+  <div class="text">
+
 <p id="notice"><%= notice %></p>
 
 <h1>Reviews</h1>
@@ -33,3 +39,8 @@
 <br>
 
 <%= link_to 'New Review', new_review_path %>
+
+  </div>
+</div>
+
+<%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>

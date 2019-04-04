@@ -20,8 +20,13 @@
     <%= form.label :fio %>
     <%= form.text_field :fio, id: :user_fio %>
   </div>
-
+  
   <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :user_phone %>
+  </div>
+
+  <div class="field" style="display:none;">
     <%= form.label :hb %>
     <%= form.text_field :hb, id: :user_hb %>
   </div>
@@ -36,23 +41,18 @@
     <%= form.text_field :card, id: :user_card %>
   </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone, id: :user_phone %>
-  </div>
-
-  <div class="field">
+  <div class="field" style="display:none;">
     <%= form.label :role %>
     <%= form.text_field :role, id: :user_role %>
   </div>
 
 
-  <div class="field">
+  <div class="field" style="display:none;">
     <%= form.label :bonuses %>
     <%= form.text_field :bonuses, id: :user_bonuses %>
   </div>
   
-  <div class="field">
+  <div class="field" style="display:none;">
     <%= form.label :percent %>
     <%= form.text_field :percent, id: :user_percent %>
   </div>

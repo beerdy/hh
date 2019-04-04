@@ -1,1 +1,4 @@
-[get] from 1C server: <%= @some %>
+<%= current_user.fio %><br>
+<ul>
+  <li><strong>Бонусы из базы 1C: </strong> <%= @data_1C["bonusSum"] %> </li>
+</ul>

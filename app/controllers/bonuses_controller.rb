@@ -4,6 +4,9 @@ require 'net/https'
 require 'json'
 
 class BonusesController < ApplicationController
+  include Bonuses
+  before_action :get_bonuse
+  
   before_action :set_bonuse, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
@@ -16,7 +19,7 @@ class BonusesController < ApplicationController
     uri = URI.parse("http://79.111.122.45:88/front_bonuses/hs/bonuses/getSum")
     http = Net::HTTP.new(uri.host,uri.port)
     #https.use_ssl = true
-    req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
+    req = Net::HTTP::Post.new(uri.path, initheader = { 'Content-Type' => 'application/json' })
     req.basic_auth 'otklik1c', '123456'
     #req['foo'] = 'bar'
     req.body = "#{@toSend}"
@@ -25,24 +28,35 @@ class BonusesController < ApplicationController
     @some = "Response #{res.code} #{res.message}: #{res.body}"
   end
 
+  # POST 
   def move
-    #000807 - real number
-    @toSend = {
-      "cardIdFrom"=>"#{params[:card_id_from]}",
-      "cardIdTo"=>"#{params[:card_id_to]}",
-      "sum"=>params[:sum].to_i
-    }.to_json
+    if @card == params[:card]
+      render json: { status: 'youcard' }, status: :accepted
+    elsif @data_1C["bonusSum"] < params[:count].to_i
+      render json: { status: 'notenough' }, status: :accepted
+    else
+      @toSend = {
+        "cardIdFrom"=>@card,
+        "cardIdTo"=>"#{params[:card]}",
+        "sum"=>params[:count].to_i
+      }.to_json
 
-    uri = URI.parse("http://79.111.122.45:88/front_bonuses/hs/bonuses/moveSum")
-    http = Net::HTTP.new(uri.host,uri.port)
-    #https.use_ssl = true
-    req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
-    req.basic_auth 'otklik1c', '123456'
-    #req['foo'] = 'bar'
-    req.body = "#{@toSend}"
-    puts "#{req.body}"
-    res = http.request(req)
-    @some = "Response #{res.code} #{res.message}: #{res.body}"
+      uri = URI.parse("http://79.111.122.45:88/front_bonuses/hs/bonuses/moveSum")
+      http = Net::HTTP.new(uri.host,uri.port)
+      #https.use_ssl = true
+      req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
+      req.basic_auth 'otklik1c', '123456'
+      #req['foo'] = 'bar'
+      req.body = "#{@toSend}"
+      res = http.request(req)
+      # "Response #{res.code} #{res.message}: #{res.body}"
+      if res.code.to_i == 200
+        status = 'ok'
+      else
+        status = 'errorservice'
+      end
+      render json: { status: status }, status: :accepted
+    end
   end
 
   def add
@@ -148,7 +162,6 @@ class BonusesController < ApplicationController
     def set_bonuse
       @bonuse = Bonuse.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def bonuse_params
       params.require(:bonuse).permit(:used_id, :fio, :birthday, :count, :card)

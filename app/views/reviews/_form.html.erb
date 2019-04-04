@@ -31,12 +31,12 @@
     <%= form.text_area :description, id: :review_description %>
   </div>
 
-  <div class="field">
+  <div class="field" style="display:none;">
     <%= form.label :user_id %>
     <%= form.text_field :user_id, id: :review_user_id %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Отправить' %>
   </div>
 <% end %>
