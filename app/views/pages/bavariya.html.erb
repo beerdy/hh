@@ -8,9 +8,9 @@
 <p>Пиво с нашей пивоварни оценено не только постоянными гостями, но и престижными международными выставками с присвоением золотых медалей. Вас так же порадует интересное меню, в котором сочетаются блюда европейкой и русской кухни.</p>
 </div>
 <div class="menu">
-<a href="/assets/B_main.pdf">ОСН. МЕНЮ</a>
-<a href="/assets/B_pivo.pdf">ПИВНАЯ КАРТА</a>
-<a href="/assets/B_det.pdf">ДЕТСКОЕ МЕНЮ</a>
+  <%= link_to "ОСН. МЕНЮ", asset_path("B_main.pdf") %>
+  <%= link_to "ПИВНАЯ КАРТА", asset_path("B_pivo.pdf") %>
+  <%= link_to "ДЕТСКОЕ МЕНЮ", asset_path("B_det.pdf") %>
 </div>
 <div class="photos">
           <div class="photo-iteam"><%= image_tag("b01.jpg", class: "tobig", alt: "") %></div>

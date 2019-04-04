@@ -1,6 +1,6 @@
 <section class="news">
  <%= render partial: 'application/navbar', locals: {back: false}%>
- <%= render partial: 'application/header', locals: {h1:"Редактирование новости", h1up:"News"}%>
+ <%= render partial: 'application/header', locals: {h1:"Редактирование события", h1up:"Events"}%>
 <div class="content">
 	<%= render 'form', event: @event, gallery: @gallery  %>
 	<%= link_to 'Show', @event %>
