@@ -1,5 +1,6 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
+  before_action :check_auth
 
   # GET /contents
   # GET /contents.json
@@ -24,6 +25,8 @@ class ContentsController < ApplicationController
   # POST /contents
   # POST /contents.json
   def create
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @content = Content.new(content_params)
 
     respond_to do |format|
@@ -40,6 +43,8 @@ class ContentsController < ApplicationController
   # PATCH/PUT /contents/1
   # PATCH/PUT /contents/1.json
   def update
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     respond_to do |format|
       if @content.update(content_params)
         format.html { redirect_to @content, notice: 'Content was successfully updated.' }
@@ -54,6 +59,8 @@ class ContentsController < ApplicationController
   # DELETE /contents/1
   # DELETE /contents/1.json
   def destroy
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @content.destroy
     respond_to do |format|
       format.html { redirect_to contents_url, notice: 'Content was successfully destroyed.' }

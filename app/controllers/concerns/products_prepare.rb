@@ -7,7 +7,6 @@ module ProductsPrepare
 
       position = "product#{count}"
       if params[position]
-        puts "params: #{params[position]}"
         products << params[position]
       else
         break

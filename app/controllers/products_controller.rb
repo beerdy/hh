@@ -1,9 +1,8 @@
 class ProductsController < ApplicationController
-  include AuthFake
-  before_action :check_auth
-  
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :set_gallery, only: [:new, :edit, :update]
+  # before_action :authenticate_user!
+  before_action :check_auth
 
   # GET /products
   # GET /products.json

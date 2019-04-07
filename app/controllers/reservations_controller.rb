@@ -1,10 +1,13 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :check_auth
   
   # GET /reservations
   # GET /reservations.json
   def index
+    unless current_user.admin? then redirect_to root_path; return false; end
+
     @reservations = Reservation.all
   end
 
@@ -31,7 +34,7 @@ class ReservationsController < ApplicationController
     respond_to do |format|
       if @reservation.save
         UserMailer.reservation_email(@reservation).deliver!
-        format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
+        format.html { redirect_to @reservation, notice: 'Заказ на бронирование успешно отправлен. С Вами свяжется наш оператор' }
         format.json { render :show, status: :created, location: @reservation }
       else
         format.html { render :new }
@@ -43,6 +46,8 @@ class ReservationsController < ApplicationController
   # PATCH/PUT /reservations/1
   # PATCH/PUT /reservations/1.json
   def update
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     respond_to do |format|
       if @reservation.update(reservation_params)
         format.html { redirect_to @reservation, notice: 'Reservation was successfully updated.' }
@@ -57,6 +62,8 @@ class ReservationsController < ApplicationController
   # DELETE /reservations/1
   # DELETE /reservations/1.json
   def destroy
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @reservation.destroy
     respond_to do |format|
       format.html { redirect_to reservations_url, notice: 'Reservation was successfully destroyed.' }

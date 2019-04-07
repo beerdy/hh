@@ -3,8 +3,12 @@ module Bonuses
 
   def get_bonuse
     return unless current_user.card
+    card_number current_user.card
+    get_info
+  end
 
-    @card = "000#{current_user.card}"
+  def get_info
+    @is_user1c_get = false
     
     @toSend = {
       "cardId"=>@card
@@ -27,8 +31,33 @@ module Bonuses
     begin
       @data_1C = JSON.parse(res.body.force_encoding("UTF-8"))
       @data_1C["bonusSum"] = @data_1C["bonusSum"].to_i
+      @is_user1c_get = true
     rescue Exception => e
       @data_1C = { "bonusSum" => -1 } # Проблемы с картой
     end
   end
+
+  def is_card_current_user?
+    pp @data_1C
+    puts "FIO: #{@data_1C["clientName"]}"
+    pp current_user
+    
+    card_number user_params[:card]
+    get_info
+    return false unless is_user1c_get?
+
+    user_params[:fio].downcase == @data_1C["clientName"].downcase
+  end
+  def is_user1c_get?
+    @is_user1c_get
+  end
+
+  private
+    def card_number e
+      if e.length < 6
+        @card = "#{'0'*(6-e.to_s.length)}#{e.to_s}"
+      else
+        @card = e.to_s
+      end
+    end
 end

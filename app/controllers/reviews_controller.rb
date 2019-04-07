@@ -1,10 +1,13 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :check_auth
 
   # GET /reviews
   # GET /reviews.json
   def index
+    #unless current_user.admin? then redirect_to root_path; return false; end
+    
     @reviews = Review.all
   end
 
@@ -31,7 +34,7 @@ class ReviewsController < ApplicationController
     respond_to do |format|
       if @review.save
         UserMailer.review_email(@review).deliver!
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
+        format.html { redirect_to @review, notice: 'Отзыв успешно отправлен' }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }
@@ -43,6 +46,8 @@ class ReviewsController < ApplicationController
   # PATCH/PUT /reviews/1
   # PATCH/PUT /reviews/1.json
   def update
+    unless current_user.admin? then redirect_to root_path; return false; end
+
     respond_to do |format|
       if @review.update(review_params)
         format.html { redirect_to @review, notice: 'Review was successfully updated.' }
@@ -57,6 +62,8 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1
   # DELETE /reviews/1.json
   def destroy
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @review.destroy
     respond_to do |format|
       format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }

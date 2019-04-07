@@ -1,9 +1,12 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_auth
+  
   # GET /messages
   # GET /messages.json
   def index
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @messages = Message.all
   end
 
@@ -40,6 +43,8 @@ class MessagesController < ApplicationController
   # PATCH/PUT /messages/1
   # PATCH/PUT /messages/1.json
   def update
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     respond_to do |format|
       if @message.update(message_params)
         format.html { redirect_to @message, notice: 'Message was successfully updated.' }
@@ -54,6 +59,8 @@ class MessagesController < ApplicationController
   # DELETE /messages/1
   # DELETE /messages/1.json
   def destroy
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @message.destroy
     respond_to do |format|
       format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }

@@ -6,5 +6,5 @@ class Reservation
   field :description, type: String
   field :user_id, type: BSON::ObjectId
 
-  #belongs_to :user
+  belongs_to :user
 end

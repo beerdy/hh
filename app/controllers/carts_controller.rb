@@ -1,10 +1,13 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :check_auth
 
   # GET /carts
   # GET /carts.json
   def index
+    unless current_user.admin? then redirect_to root_path; return false; end
+
     @carts = Cart.all
   end
 
@@ -87,7 +90,6 @@ class CartsController < ApplicationController
 
   def dec
   end
-
   def delete
   end
   def remove

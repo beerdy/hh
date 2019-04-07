@@ -1,9 +1,12 @@
 class GalleriesController < ApplicationController
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
+  before_action :check_auth
 
   # GET /galleries
   # GET /galleries.json
   def index
+    #unless current_user.admin? then redirect_to root_path; return false; end
+    
     @galleries = Gallery.all
   end
 
@@ -24,6 +27,8 @@ class GalleriesController < ApplicationController
   # POST /galleries
   # POST /galleries.json
   def create
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     params.merge!( 
       :gallery => { :image => params.delete(:file) }
     )
@@ -44,6 +49,8 @@ class GalleriesController < ApplicationController
   # PATCH/PUT /galleries/1
   # PATCH/PUT /galleries/1.json
   def update
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     params.merge!( 
       :gallery => { :image => params.delete(:file) }
     )
@@ -62,6 +69,8 @@ class GalleriesController < ApplicationController
   # DELETE /galleries/1
   # DELETE /galleries/1.json
   def destroy
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @gallery.destroy
     respond_to do |format|
       format.html { redirect_to galleries_url, notice: 'Gallery was successfully destroyed.' }

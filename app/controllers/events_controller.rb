@@ -1,15 +1,14 @@
 class EventsController < ApplicationController
-  include AuthFake
-  before_action :check_auth
-  
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :set_gallery, only: [:new, :edit, :update]
-  
+  before_action :check_auth
 
   # GET /events
   # GET /events.json
 
   def index
+    #unless current_user.admin? then redirect_to root_path; return false; end
+    
     @events = Event.all
   end
 
@@ -27,9 +26,8 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    unless current_user.admin? then redirect_to root_path; return false; end
-
   end
+  
   def search
     if params[:tag]
       @events = Event.where(tag: /[#{params[:tag]}]{5,}/)

@@ -2,10 +2,13 @@ class OrdersController < ApplicationController
   include ProductsPrepare
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :check_auth
 
   # GET /orders
   # GET /orders.json
   def index
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @orders = Order.all
   end
 
@@ -46,6 +49,8 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     respond_to do |format|
       if @order.update(order_params)
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
@@ -60,6 +65,8 @@ class OrdersController < ApplicationController
   # DELETE /orders/1
   # DELETE /orders/1.json
   def destroy
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @order.destroy
     respond_to do |format|
       format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }

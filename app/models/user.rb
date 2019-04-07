@@ -41,7 +41,7 @@ class User
   has_many :reviews, dependent: :destroy
   has_many :reservations, dependent: :destroy
 
-  validates :card, uniqueness: true
+  validates :card, uniqueness: true, :unless => :card_nil? 
 
   ## Trackable
   # field :sign_in_count,      type: Integer, default: 0
@@ -72,5 +72,8 @@ class User
   private
     def convert_title_to_url
       self.url = self.title.to_slug_param if self.url == nil or self.url == ''
+    end
+    def card_nil?
+      self.card == '' or self.card == nil
     end
 end

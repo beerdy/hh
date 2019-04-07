@@ -1,6 +1,7 @@
 class HistoriesController < ApplicationController
   before_action :set_history, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_auth
+  
   # GET /histories
   # GET /histories.json
   def index
@@ -24,6 +25,8 @@ class HistoriesController < ApplicationController
   # POST /histories
   # POST /histories.json
   def create
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @history = History.new(history_params)
 
     respond_to do |format|
@@ -40,6 +43,8 @@ class HistoriesController < ApplicationController
   # PATCH/PUT /histories/1
   # PATCH/PUT /histories/1.json
   def update
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     respond_to do |format|
       if @history.update(history_params)
         format.html { redirect_to @history, notice: 'History was successfully updated.' }
@@ -54,6 +59,8 @@ class HistoriesController < ApplicationController
   # DELETE /histories/1
   # DELETE /histories/1.json
   def destroy
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @history.destroy
     respond_to do |format|
       format.html { redirect_to histories_url, notice: 'History was successfully destroyed.' }
