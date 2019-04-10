@@ -147,6 +147,7 @@ h3{
   line-height: 1.2;
   text-align: left;
   z-index: 5;
+  margin:0 0 20px 0;
 }
 h4{
 	font-size:20px;
@@ -299,6 +300,22 @@ option, select{
 			color:#fff;
 			border-bottom: 0px solid #b68360;
 		}
+			.nav li.small.adm{
+				height: 20px;
+				border: 1px solid #000;
+				background: rgba(0, 0, 0, 0.5);
+				margin:2px 0 2px 0;
+			}
+			.nav li.small.adm a{
+				font-size: 14px;
+				font-weight: normal;
+				text-transform: none;
+				letter-spacing: 2px;
+				text-decoration: none;
+				color:#fff;	
+				line-height: 20px;
+			}
+
 		.nav li a{
 			display: block;
 			font-size: 16px;
@@ -379,6 +396,7 @@ option, select{
 			line-height: 25px;
 			font-weight: bold;
 			letter-spacing: 1px;
+			overflow: hidden;
 		}
 		.nav li.user .phone{
 			position: absolute;
@@ -392,6 +410,7 @@ option, select{
 			font-size: 14px;
 			line-height: 25px;
 			letter-spacing: 1px;
+			overflow: hidden;
 		}
 .back{
 	width: 40px;
@@ -1359,7 +1378,7 @@ option, select{
 		}
 			.user-info .bs .bonuses{
 				display: block;
-			    width: 48%;
+			    width: 100%;
 			    padding: 5px 0 0 0;
 			    background: #f1c854;
 			    box-sizing: border-box;
@@ -1487,15 +1506,127 @@ img.tobig:hover{
 	background-size: contain;
 }
 .balli{
+	position: relative;
 	box-sizing: border-box;
 	border: 2px solid #f1c854;
 	padding:20px;
+	margin:20px auto;
+	max-width: 500px;
 }
-.notice{
+#notice{
 	padding:20px;
 	text-align: center;
 	font-weight: bold;
 	color:#fbcb45;
+}
+.adminka{
+	box-sizing: border-box;
+	padding:20px;
+	margin:20px auto;
+	max-width: 500px;
+	 border: 2px solid #000;
+    background: rgba(0, 0, 0, 0.5);
+}
+.ajaxerror{
+	background:red;
+	color:#fff;
+	margin:0 0 10px 0;
+	padding:10px;
+}
+.ajaxok{
+	background:#f1c854;
+	color:#000;
+	margin:0 0 10px 0;
+	padding:10px;
+}
+#messloading{
+	background: rgba(0,0,0,0.8);
+	line-height: 100%;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	width:100%;
+	height:100%;
+	position: absolute;
+	top:0;
+	left:0;
+	padding-top:50px;
+	box-sizing: border-box;
+}
+.file-upload input[type="file"]{
+	display: none;/* скрываем input file */
+}
+
+.file-upload {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 40px;
+	background: #f1c854;
+	border-radius: 5px;
+	color: #000;
+	text-align: center;
+}
+
+.file-upload:hover {
+	background: #d3ab38;
+}
+
+.file-upload label {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+.file-upload span {
+	line-height: 40px;
+	font-weight:bold;
+	}
+
+#file-name{
+	margin:5px 0 5px 0;
+	padding:10px;
+	background:rgba(0,0,0,0.5);
+}
+.box-modal{
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.8);
+	z-index: 99999999;
+	color:#000;
+	font-weight: bold;
+	font-size: 20px;
+}
+.box-modal-content{
+	position: relative;
+	margin:10% auto;
+	width:300px;
+	background:#f1c854;
+	z-index: 99999999;
+	padding:20px;
+	text-align: center;
+	border-radius: 5px;
+}
+	.box-modal-content h3{
+		font-size: 24px;
+		color:#000;
+		text-align: center;
+	}
+	.box-modal-content p{
+		text-align: center;
+	}
+.box-modal_yes, .box-modal_no{
+	display: inline-block;
+	padding:10px;
+	margin: auto;
+	border:3px solid #000;
 }
 @-webkit-keyframes bugfix {
     to {

@@ -8,7 +8,6 @@
     <div class="page">
     <div class="product-images">
     <% if has_image? @event.photos[0] %>
-      
         <% @event.photos.each do |meta| %>
             <%= image_tag get_image(meta).image.url, class: 'img-responsive', width: '320' %>
         <% end %>
@@ -18,8 +17,13 @@
     </div>
     <div class="description"><%= @event.description.html_safe %></div>
     </div>
+    <% if user_signed_in? %>
+        <% if current_user.admin? %>
+            <%= link_to 'Удалить', @event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
+            <%= link_to 'Редактировать', edit_event_path(@event), class: 'button' %>
+        <%end%>
+    <%end%>
 
-<%= link_to 'Edit', edit_event_path(@event), class: 'button' %>
 
 </div>
 </table>

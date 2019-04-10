@@ -1,29 +1,17 @@
-<p id="notice"><%= notice %></p>
+<section class="newsiteam">
+ <%= render partial: 'application/navbar', locals: {back: true, back_url: reservations_path} %>
+ <%= render partial: 'application/header', locals: {h1:'Столик забронирован', h1up:"Reservation"}%>
+<div class="content">
+<div class="text">
+    
+    <p class="center">
+      <p id="notice"><%= notice %></p>
+    </p>
+    <h2>Карта проезда</h2>
+    <div class="map">
+      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A09ca8ffe2589e9352d42f8dd5302521b2d5359269eca545a7f962e1469fc70f9&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @reservation.name %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @reservation.phone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @reservation.email %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @reservation.description %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @reservation.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
-<%= link_to 'Back', reservations_path %>
+<%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
+</section>

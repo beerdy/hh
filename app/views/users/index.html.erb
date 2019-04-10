@@ -1,30 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>E-MAIL</th>
-
-      <!-- control -->
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
+<section class="news">
+<%= render partial: 'application/navbar', locals: {back: false}%>
+<%= render partial: 'application/header', locals: {h1:'Пользователи', h1up:"Info"}%>
+<div class="content">
+  <div class="page">
+  <p id="notice"><%= notice %></p>
+  <table>
+    <thead>
       <tr>
-        <td><%= user.email %></td>
+        <th>E-MAIL</th>
 
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- control -->
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
 
-<%= link_to 'New User', new_user_path %>
+          <td><%= link_to 'Show', user %></td>
+          <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+<%= link_to 'Новый пользователь', new_user_path, class: 'button' %>
+<%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
+</section>

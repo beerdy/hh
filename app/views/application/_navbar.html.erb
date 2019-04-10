@@ -24,6 +24,11 @@
             <li class="otziv"><a href="/reviews/new">Оставить отзыв</a></li>
             <li class="cont"><a href="/pages/contacts">Контакты</a></li>
             <% if user_signed_in? %>
+                <% if current_user.admin? %>
+                    <li class="small adm"><a href="/users/">Пользователи</a></li>
+                    <li class="small adm"><a href="/orders/">Брони</a></li>
+                    <li class="small adm"><a href="/reviews/">Отзывы</a></li>
+                <%end%>
             <li class="small user"><a href="/users/<%= current_user.id %>">Личный кабинет</a></li>
             <li class="small cart"><%= link_to "Корзина (#{current_cart.count})", cart_item_show_path %></li>
              <% end %>

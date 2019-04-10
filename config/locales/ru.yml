@@ -15,7 +15,7 @@ ru:
       user:
         image: 'Аватар'
         email: "Email"
-        fio: 'Имя Фамилия' 
+        fio: 'ФИО' 
         password: 'Пароль'
         remember_me: 'Запомнить меня'
         login: 'Вход'

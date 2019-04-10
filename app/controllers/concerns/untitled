@@ -1,0 +1,222 @@
+
+UUID=sdo: UUID="9ed11eb8-6f1a-411d-9633-1c63fc80007e" TYPE="xfs"
+UUID=sde: UUID="e6458421-0381-462c-9ed1-3dfb38de714d" TYPE="xfs"
+UUID=sdm: UUID="2e243681-0a42-46ee-85e2-e4d248eba428" TYPE="xfs"
+UUID=sdq: UUID="1f180f94-0610-4188-8b2c-5e179165ad25" TYPE="xfs"
+UUID=sdi: UUID="5f2eccf6-1a26-4819-b353-5ba858cb674c" TYPE="xfs"
+UUID=sdb: UUID="a43f22c7-a884-43ac-824a-1d2deb80594f" TYPE="xfs"
+UUID=sdc: UUID="c9900604-0e12-4cd3-be43-1b88a562bbdb" TYPE="xfs"
+UUID=sdp: UUID="e8baf399-179d-4e9f-b6dd-99d31b3418f8" TYPE="xfs"
+UUID=sdf: UUID="2bbc1149-19c4-47fb-a5ef-a93c770a8f23" TYPE="xfs"
+UUID=sdl: UUID="8c5483a3-74ed-46e2-bd31-39d8b79826b7" TYPE="xfs"
+UUID=sdn: UUID="9315eaf3-4d14-4ee4-ad54-a41433778598" TYPE="xfs"
+UUID=sdj: UUID="36cd2f54-e2d6-4795-b75f-6463fcbc81ed" TYPE="xfs"
+UUID=sdx: UUID="9b5dbb83-cf1d-4c51-abc9-4f00b52fada5" TYPE="xfs"
+UUID=sdk: UUID="dc5ab296-9e95-4916-966d-eae4cf6c385f" TYPE="xfs"
+UUID=sdr: UUID="2f9ac57f-e047-4cb8-b89e-386922ebd79e" TYPE="xfs"
+UUID=sdd: UUID="caae8bc2-c57d-4313-af36-9aee6081897b" TYPE="xfs"
+UUID=sdv: UUID="56753f59-67a8-4166-a712-5097592feb68" TYPE="xfs"
+UUID=sds: UUID="019b44e9-bd48-4cef-a08a-a8cdf6d5f4f7" TYPE="xfs"
+UUID=sdt: UUID="6ec0adc5-f846-45e2-86a0-2dc77cb617cb" TYPE="xfs"
+UUID=sdg: UUID="adee4daa-1c4e-4502-9e8e-990a67092a78" TYPE="xfs"
+UUID=sdw: UUID="21a6581a-ce0c-4b21-bfe4-7ee777fa29da" TYPE="xfs"
+UUID=sdu: UUID="793abedb-1d39-4626-9f6d-688a60538c17" TYPE="xfs"
+UUID=sdh: UUID="b1bacc87-a0b5-4e20-ac7d-f3739b06b34b" TYPE="xfs"
+
+UUID=sdq /disk1  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdp /disk2  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdh /disk3  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdk /disk4  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdl /disk5  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdm /disk6  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdi /disk7  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdn /disk8  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdx /disk9  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdr /disk10  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdb /disk11  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sds /disk12  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdo /disk13  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdf /disk14  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdw /disk15  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdj /disk16  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sde /disk17  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdc /disk18  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdt /disk19  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdg /disk20  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdv /disk21  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdu /disk22  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdd /disk23  xfs noatime,logbsize=16k,logbufs=4 0 1
+
+
+UUID=1f180f94-0610-4188-8b2c-5e179165ad25 /disk1  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=e8baf399-179d-4e9f-b6dd-99d31b3418f8 /disk2  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=b1bacc87-a0b5-4e20-ac7d-f3739b06b34b /disk3  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=dc5ab296-9e95-4916-966d-eae4cf6c385f /disk4  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=8c5483a3-74ed-46e2-bd31-39d8b79826b7 /disk5  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=2e243681-0a42-46ee-85e2-e4d248eba428 /disk6  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=5f2eccf6-1a26-4819-b353-5ba858cb674c /disk7  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=9315eaf3-4d14-4ee4-ad54-a41433778598 /disk8  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=9b5dbb83-cf1d-4c51-abc9-4f00b52fada5 /disk9  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=2f9ac57f-e047-4cb8-b89e-386922ebd79e /disk10  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=a43f22c7-a884-43ac-824a-1d2deb80594f /disk11  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=019b44e9-bd48-4cef-a08a-a8cdf6d5f4f7 /disk12  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=9ed11eb8-6f1a-411d-9633-1c63fc80007e /disk13  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=2bbc1149-19c4-47fb-a5ef-a93c770a8f23 /disk14  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=21a6581a-ce0c-4b21-bfe4-7ee777fa29da /disk15  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=36cd2f54-e2d6-4795-b75f-6463fcbc81ed /disk16  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=e6458421-0381-462c-9ed1-3dfb38de714d /disk17  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=c9900604-0e12-4cd3-be43-1b88a562bbdb /disk18  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=6ec0adc5-f846-45e2-86a0-2dc77cb617cb /disk19  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=adee4daa-1c4e-4502-9e8e-990a67092a78 /disk20  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=56753f59-67a8-4166-a712-5097592feb68 /disk21  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=793abedb-1d39-4626-9f6d-688a60538c17 /disk22  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=caae8bc2-c57d-4313-af36-9aee6081897b /disk23  xfs noatime,logbsize=16k,logbufs=4 0 1
+
+UUID=1a7de2fb-7557-4788-a403-354ad5519a9f /disk1 xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=616f8656-5c57-4bcc-af3e-97059171e191 /disk2 xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=11461680-d73c-4d3f-920a-21f5eef03616 /disk3 xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=52215f18-a8fa-48e2-98ce-e7651a8ef713 /disk4 xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=a2729c7f-b686-4c46-8007-14e68b98494b /disk5 xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=154ee308-0fcc-4aeb-9992-3a1359f3c225 /disk6 xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=8ad977a0-56d4-42ed-be08-3fa853bae557 /disk7  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=1f9bffa2-f636-4fdc-b192-43e8127e111a /disk8  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=4c553396-f295-4fde-b2f3-299badd0ed10 /disk9  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=41c0ef6b-0408-47f1-8d87-399c6293459b /disk10  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=61276175-7dc6-4666-a204-191129f8c0a8 /disk11  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=53940ab7-2c70-4020-b3c2-06931bb2c62c /disk12  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=bee6b325-0e31-44f9-8837-74c11ff8d995 /disk13  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=799145ad-4e45-4a02-af71-e53e5cce3b46 /disk14  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=1b4eb7a2-7433-4f44-b7dc-3d41b376258c /disk15  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=c2ec0a9c-3ee5-4fb3-a89f-29189dde5cd8 /disk16  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=daa7769f-d411-45a4-9b67-95b21938fcdd /disk17  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=4c3f625c-a4e1-4930-9d52-7bbfd1ca8a9f /disk18  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=8b836844-d095-4738-96dd-efbc97234b9e /disk19  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=4426f117-c7e1-4c9a-9a72-7758fdb9483d /disk20  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=a090379d-920d-4522-9c7d-1dcc3dcff7cf /disk21  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=dc81e6b4-4088-4100-b81f-f3d6c4f6a29f /disk22  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=bd41427d-a18c-4686-9e90-d46e991470ed /disk23  xfs noatime,logbsize=16k,logbufs=4 0 1
+
+UUID=sdd: UUID="11461680-d73c-4d3f-920a-21f5eef03616" TYPE="xfs"
+UUID=sde: UUID="8ad977a0-56d4-42ed-be08-3fa853bae557" TYPE="xfs"
+UUID=sdg: UUID="52215f18-a8fa-48e2-98ce-e7651a8ef713" TYPE="xfs"
+UUID=sdh: UUID="616f8656-5c57-4bcc-af3e-97059171e191" TYPE="xfs"
+UUID=sdf: UUID="154ee308-0fcc-4aeb-9992-3a1359f3c225" TYPE="xfs"
+UUID=sdi: UUID="1f9bffa2-f636-4fdc-b192-43e8127e111a" TYPE="xfs"
+UUID=sdo: UUID="799145ad-4e45-4a02-af71-e53e5cce3b46" TYPE="xfs"
+UUID=sdm: UUID="41c0ef6b-0408-47f1-8d87-399c6293459b" TYPE="xfs"
+UUID=sdv: UUID="a090379d-920d-4522-9c7d-1dcc3dcff7cf" TYPE="xfs"
+UUID=sdl: UUID="4c553396-f295-4fde-b2f3-299badd0ed10" TYPE="xfs"
+UUID=sds: UUID="4c3f625c-a4e1-4930-9d52-7bbfd1ca8a9f" TYPE="xfs"
+UUID=sdr: UUID="daa7769f-d411-45a4-9b67-95b21938fcdd" TYPE="xfs"
+UUID=sdc: UUID="a2729c7f-b686-4c46-8007-14e68b98494b" TYPE="xfs"
+UUID=sdj: UUID="53940ab7-2c70-4020-b3c2-06931bb2c62c" TYPE="xfs"
+UUID=sdp: UUID="1b4eb7a2-7433-4f44-b7dc-3d41b376258c" TYPE="xfs"
+UUID=sdn: UUID="bee6b325-0e31-44f9-8837-74c11ff8d995" TYPE="xfs"
+UUID=sdw: UUID="dc81e6b4-4088-4100-b81f-f3d6c4f6a29f" TYPE="xfs"
+UUID=sdt: UUID="8b836844-d095-4738-96dd-efbc97234b9e" TYPE="xfs"
+UUID=sdq: UUID="c2ec0a9c-3ee5-4fb3-a89f-29189dde5cd8" TYPE="xfs"
+UUID=sdk: UUID="61276175-7dc6-4666-a204-191129f8c0a8" TYPE="xfs"
+UUID=sdx: UUID="bd41427d-a18c-4686-9e90-d46e991470ed" TYPE="xfs"
+UUID=sdu: UUID="4426f117-c7e1-4c9a-9a72-7758fdb9483d" TYPE="xfs"
+UUID=mapper/debian--vg-root: UUID="472127a4-2c0f-4863-8351-13512737388c" TYPE="ext4"
+UUID=sdb: UUID="1a7de2fb-7557-4788-a403-354ad5519a9f" TYPE="xfs"
+UUID=mapper/debian--vg-swap_1: UUID="44f391a9-ed15-4f11-acc4-39236153c78d" TYPE="swap"
+
+
+UUID=sdi /disk8  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdl /disk9  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdm /disk10  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdk /disk11  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdj /disk12  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdn /disk13  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdo /disk14  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdp /disk15  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdq /disk16  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdr /disk17  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sds /disk18  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdt /disk19  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdu /disk20  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdv /disk21  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdw /disk22  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=sdx /disk23  xfs noatime,logbsize=16k,logbufs=4 0 1
+
+
+/dev/sdb: UUID="e86a3595-d576-4fde-881f-4b4b4b54cdb3" TYPE="xfs"
+/dev/sdc: UUID="410a1e01-0d09-4cb9-a29d-9fe1fb666d57" TYPE="xfs"
+/dev/sde: UUID="210a1dda-61ca-46c3-ab62-52630b0c2d15" TYPE="xfs"
+/dev/sda1: UUID="112b2b69-852c-4905-a763-2f2df0077e68" TYPE="ext4" PARTUUID="27314d61-01"
+/dev/sda5: UUID="87e7e794-2d1b-4140-886e-45c41ea9f729" TYPE="swap" PARTUUID="27314d61-05"
+/dev/sdr: UUID="13a01cf7-0035-4996-8aa8-6b778fb576fa" TYPE="xfs"
+/dev/sdu: UUID="c2436bc2-b1b1-4d89-802d-6fa6ca503368" TYPE="xfs"
+/dev/sdo: UUID="d03abe5b-3a67-4d90-9a35-a5b8d15a388f" TYPE="xfs"
+/dev/sdw: UUID="207e6005-5723-4691-a277-ad6361238cf6" TYPE="xfs"
+/dev/sds: UUID="5c372ee5-cfd7-4e4c-9602-3622ac41ffab" TYPE="xfs"
+/dev/sdq: UUID="9b9caeb5-8c19-42e5-9dd5-c2ac7242bf71" TYPE="xfs"
+/dev/sdn: UUID="0c509304-36c5-496a-8fd1-b5b7668eb8e9" TYPE="xfs"
+/dev/sdm: UUID="0b5e473b-e399-47cc-9db7-82e1ad87e244" TYPE="xfs"
+/dev/sdv: UUID="c27d041f-37aa-4fe5-b3eb-82a65ce03dbe" TYPE="xfs"
+/dev/sdt: UUID="7b2ed75a-c3ee-4924-9dd3-4764db1d3abf" TYPE="xfs"
+/dev/sdx: UUID="d410e369-5d9d-4ccb-9617-a9c4b51f29be" TYPE="xfs"
+/dev/sdf: UUID="685986d8-3c27-4a83-b39b-9a557ccd7571" TYPE="xfs"
+/dev/sdg: UUID="f3617dc4-826c-409f-ae1e-034ae5a7a878" TYPE="xfs"
+/dev/sdp: UUID="ec724096-2bbd-43ba-809c-9ee96864af1b" TYPE="xfs"
+/dev/sdh: UUID="325c0345-4c4d-49b0-a924-a9072a86ab29" TYPE="xfs"
+/dev/sdi: UUID="4ee461f2-c76f-453b-8d48-21eebbe20583" TYPE="xfs"
+/dev/sdl: UUID="a59915a7-77c8-4231-a776-758c266e03e2" TYPE="xfs"
+/dev/sdj: UUID="b706a95b-95b4-4f4e-8fc5-4ea63ca14812" TYPE="xfs"
+/dev/sdk: UUID="2a53c535-7618-4417-9202-0585eec5cd5f" TYPE="xfs"
+/dev/sdd: UUID="6da2fdad-4b83-43dd-b3d0-5412757efc3a" TYPE="xfs"
+
+
+UUID=410a1e01-0d09-4cb9-a29d-9fe1fb666d57 /disk1  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=f3617dc4-826c-409f-ae1e-034ae5a7a878 /disk2  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=e86a3595-d576-4fde-881f-4b4b4b54cdb3 /disk3  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=325c0345-4c4d-49b0-a924-a9072a86ab29 /disk4  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=6da2fdad-4b83-43dd-b3d0-5412757efc3a /disk5  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=210a1dda-61ca-46c3-ab62-52630b0c2d15 /disk6  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=685986d8-3c27-4a83-b39b-9a557ccd7571 /disk7  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=2a53c535-7618-4417-9202-0585eec5cd5f /disk8  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=a59915a7-77c8-4231-a776-758c266e03e2 /disk9  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=4ee461f2-c76f-453b-8d48-21eebbe20583 /disk10  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=b706a95b-95b4-4f4e-8fc5-4ea63ca14812 /disk11  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=0c509304-36c5-496a-8fd1-b5b7668eb8e9 /disk12  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=0b5e473b-e399-47cc-9db7-82e1ad87e244 /disk13  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=d03abe5b-3a67-4d90-9a35-a5b8d15a388f /disk14  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=ec724096-2bbd-43ba-809c-9ee96864af1b /disk15  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=9b9caeb5-8c19-42e5-9dd5-c2ac7242bf71 /disk16  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=5c372ee5-cfd7-4e4c-9602-3622ac41ffab /disk17  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=13a01cf7-0035-4996-8aa8-6b778fb576fa /disk18  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=c2436bc2-b1b1-4d89-802d-6fa6ca503368 /disk19  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=207e6005-5723-4691-a277-ad6361238cf6 /disk20  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=7b2ed75a-c3ee-4924-9dd3-4764db1d3abf /disk21  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=c27d041f-37aa-4fe5-b3eb-82a65ce03dbe /disk22  xfs noatime,logbsize=16k,logbufs=4 0 1
+UUID=d410e369-5d9d-4ccb-9617-a9c4b51f29be /disk23  xfs noatime,logbsize=16k,logbufs=4 0 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

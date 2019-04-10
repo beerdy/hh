@@ -1,3 +1,8 @@
+<section class="newsiteam">
+ <%= render partial: 'application/navbar', locals: {back: true, back_url: orders_path} %>
+ <%= render partial: 'application/header', locals: {h1:'Столик забронирован', h1up:"Events", image_url: (get_image(@event.photos[0]).nil? ? '' : get_image(@event.photos[0]).image.url) }%>
+<div class="content">
+
 <p id="notice"><%= notice %></p>
 
 <p>

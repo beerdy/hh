@@ -1,6 +1,11 @@
-<p id="notice"><%= notice %></p>
+<% if current_user.admin? %>
+      <section class="news">
+      <%= render partial: 'application/navbar', locals: {back: false}%>
+      <%= render partial: 'application/header', locals: {h1:"Брони", h1up:"Reservation"}%>
+      <div class="content">
+        <div class="text">
 
-<h1>Reservations</h1>
+      <p id="notice"><%= notice %></p>
 
 <table>
   <thead>
@@ -32,4 +37,5 @@
 
 <br>
 
-<%= link_to 'New Reservation', new_reservation_path %>
+      <%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
+  <%end%>
