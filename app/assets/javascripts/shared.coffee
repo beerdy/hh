@@ -1,6 +1,7 @@
 # dropzone
 # auto discover rescue error W init in Turbolinks
 Dropzone.autoDiscover = false
+
 Dropzone.options.myAwesomeDropzone =
   init: () ->
     Dropzone.startStatus = true
@@ -16,5 +17,5 @@ Dropzone.discover()
 #-----------------------------------#
 document.addEventListener "turbolinks:load", () ->
   # dropzone discover for turbolinks
-  # Dropzone.discover()
+  Dropzone.discover()
   # END dropzone discover for turbolinks
