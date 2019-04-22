@@ -46,7 +46,7 @@
     <%= form.number_field :card, id: :bonuses_card, value: 0 %>
     Количество бонусов:
     <%= form.number_field :card, id: :bonuses_quantify, value: 0 %>
-     <%= link_to 'Передать', bonuses_move_path, class: 'js-bonuses-prize button', method: :post, remote: true %>
+     <%= link_to 'Передать', move_path, class: 'js-bonuses-prize button', method: :post, remote: true %>
   <% end %>
   </div>
   <% end %>
