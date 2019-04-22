@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   end
   get  'bonuses/prize/:card_id',    to: 'bonuses#get'
   get  'bonuses/add/:card_id/:sum', to: 'bonuses#add'
-  post 'bonuses/move',  controller: 'bonuses', action: 'move',  as: "bonuses_move"
+  post 'bonuses/move',  controller: 'bonuses', action: 'move',  as: "move"
   post 'bonuses/prize', controller: 'bonuses', action: 'prize', as: "bonuses_prize"        # for admin
     
   post   'cart_item/add',    controller: 'carts',  action: 'add',       as: "cart_item_add"            # add position by id and count in post request
