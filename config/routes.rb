@@ -2,11 +2,11 @@ Rails.application.routes.draw do
 
   resources :reservations
   resources :reviews
+  
   mount Ckeditor::Engine => '/ckeditor'
+  
   get 'pages/dorado'
-
   get 'pages/bavariya'
-
   get 'pages/contacts'
 
   resources :galleries

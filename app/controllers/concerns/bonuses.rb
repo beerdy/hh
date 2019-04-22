@@ -32,6 +32,7 @@ module Bonuses
       @data_1C = JSON.parse(res.body.force_encoding("UTF-8"))
       @data_1C["bonusSum"] = @data_1C["bonusSum"].to_i
       @is_user1c_get = true
+      pp @data_1C
     rescue Exception => e
       @data_1C = { "bonusSum" => -1 } # Проблемы с картой
     end
