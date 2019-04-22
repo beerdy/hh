@@ -1,5 +1,6 @@
 document.addEventListener 'turbolinks:load', ->
-  $('.js-bonuses-prize').on 'click', ->
+  $('.js-bonuses-prize').on 'click', (e) ->
+    e.preventDefault()
     CardBonuses = $(this).parent().find('#bonuses_quantify')
     CardNumber = $(this).parent().find('#bonuses_card')
     CardBonusesС = $(this).parent().find('#bonuses_quantify').val()
