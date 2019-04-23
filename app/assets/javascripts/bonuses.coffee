@@ -5,8 +5,9 @@ document.addEventListener 'turbolinks:load', ->
     CardNumber = $(this).parent().find('#bonuses_card')
     CardBonusesС = $(this).parent().find('#bonuses_quantify').val()
     CardNumberС = $(this).parent().find('#bonuses_card').val()
+    console.log 'move bonuses'
     $.ajax
-      url: '/bonuses/move?count=' + CardBonuses.val() + '&card=' + CardNumber.val()
+      url: '/bonuses/move_bonuses?count=' + CardBonuses.val() + '&card=' + CardNumber.val()
       type: 'post'
       dataType: 'json'
       beforeSend: ->

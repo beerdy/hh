@@ -29,7 +29,7 @@ class BonusesController < ApplicationController
   end
 
   # POST 
-  def move
+  def move_bonuses
     if @card == params[:card]
       render json: { status: 'youcard' }, status: :accepted
     elsif @data_1C["bonusSum"] < params[:count].to_i
@@ -55,8 +55,8 @@ class BonusesController < ApplicationController
       else
         status = 'errorservice'
       end
-      render json: { status: status }, status: :accepted
     end
+    render json: { status: status }, status: :accepted
   end
 
   def add
