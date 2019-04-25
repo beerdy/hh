@@ -41,13 +41,11 @@
   <% if(@data_1C["bonusSum"] > -1) %>
   <div class="balli">
     <h3>Работа с баллами</h3>
-  <%= form_with(model: @bonuse, local: true) do |form| %>
     Передать пользователю с картой (последние 6 цифр):
-    <%= form.number_field :card, id: :bonuses_card, value: 0 %>
+    <input id="bonuses_card" value="0" type="number" name="bonuse[card]">
     Количество бонусов:
-    <%= form.number_field :card, id: :bonuses_quantify, value: 0 %>
-     <%= link_to 'Передать', move_bonuses_path, class: 'js-bonuses-prize button' %>
-  <% end %>
+    <input id="bonuses_quantify" value="0" type="number" name="bonuse[card]">
+    <%= link_to 'Передать', move_bonuses_path, class: 'js-bonuses-prize button' %>
   </div>
   <% end %>
 </div>
