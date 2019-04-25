@@ -28,8 +28,38 @@ class BonusesController < ApplicationController
   #   @some = "Response #{res.code} #{res.message}: #{res.body}"
   # end
 
-  def move
-    move_bonuses    
+  # POST 
+  def move_bonuses
+    card_src = card_number(current_user.card)
+    card_dst = card_number(params[:card])
+
+    if card_src == card_dst
+      render json: { status: 'youcard' }, status: :accepted
+    elsif @data_1C["bonusSum"] < params[:count].to_i
+      render json: { status: 'notenough' }, status: :accepted
+    else
+      @toSend = {
+        "cardIdFrom" => card_src,
+        "cardIdTo"   => card_dst,
+        "sum"        => params[:count].to_i
+      }.to_json
+
+      uri = URI.parse("http://79.111.122.45:88/front_bonuses/hs/bonuses/moveSum")
+      http = Net::HTTP.new(uri.host,uri.port)
+      #https.use_ssl = true
+      req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
+      req.basic_auth 'otklik1c', '123456'
+      #req['foo'] = 'bar'
+      req.body = @toSend.to_s
+      res = http.request(req)
+      #{}"Response #{res.code} #{res.message}: #{res.body}"
+      if res.code.to_i == 200
+        status = 'ok'
+      else
+        status = 'errorservice'
+      end
+      render json: { status: status }, status: :accepted
+    end
   end
 
   # def add
