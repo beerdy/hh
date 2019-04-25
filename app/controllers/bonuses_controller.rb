@@ -10,92 +10,65 @@ class BonusesController < ApplicationController
   before_action :set_bonuse, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-  def get
-    #000807 - real number
-    @toSend = {
-      "cardId"=>"#{params[:card_id]}"
-    }.to_json
+  # def get
+  #   #000807 - real number
+  #   @toSend = {
+  #     "cardId"=>"#{params[:card_id]}"
+  #   }.to_json
 
-    uri = URI.parse("http://79.111.122.45:88/front_bonuses/hs/bonuses/getSum")
-    http = Net::HTTP.new(uri.host,uri.port)
-    #https.use_ssl = true
-    req = Net::HTTP::Post.new(uri.path, initheader = { 'Content-Type' => 'application/json' })
-    req.basic_auth 'otklik1c', '123456'
-    #req['foo'] = 'bar'
-    req.body = "#{@toSend}"
-    puts "#{req.body}"
-    res = http.request(req)
-    @some = "Response #{res.code} #{res.message}: #{res.body}"
+  #   uri = URI.parse("http://79.111.122.45:88/front_bonuses/hs/bonuses/getSum")
+  #   http = Net::HTTP.new(uri.host,uri.port)
+  #   #https.use_ssl = true
+  #   req = Net::HTTP::Post.new(uri.path, initheader = { 'Content-Type' => 'application/json' })
+  #   req.basic_auth 'otklik1c', '123456'
+  #   #req['foo'] = 'bar'
+  #   req.body = "#{@toSend}"
+  #   puts "Response #{res.code} #{res.message}: #{res.body}"
+  #   res = http.request(req)
+  #   @some = "Response #{res.code} #{res.message}: #{res.body}"
+  # end
+
+  def move
+    move_bonuses    
   end
 
-  # POST 
-  def move_bonuses
-    if @card == params[:card]
-      render json: { status: 'youcard' }, status: :accepted
-    elsif @data_1C["bonusSum"] < params[:count].to_i
-      render json: { status: 'notenough' }, status: :accepted
-    else
-      @toSend = {
-        "cardIdFrom"=>@card,
-        "cardIdTo"=>"#{params[:card]}",
-        "sum"=>params[:count].to_i
-      }.to_json
+  # def add
+  #   #000807 - real number
+  #   @toSend = {
+  #     "cardId"=>"#{params[:card_id]}",
+  #     "sum"=>params[:sum].to_i
+  #   }.to_json
 
-      uri = URI.parse("http://79.111.122.45:88/front_bonuses/hs/bonuses/moveSum")
-      http = Net::HTTP.new(uri.host,uri.port)
-      #https.use_ssl = true
-      req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
-      req.basic_auth 'otklik1c', '123456'
-      #req['foo'] = 'bar'
-      req.body = "#{@toSend}"
-      res = http.request(req)
-      # "Response #{res.code} #{res.message}: #{res.body}"
-      if res.code.to_i == 200
-        status = 'ok'
-      else
-        status = 'errorservice'
-      end
-    end
-    render json: { status: status }, status: :accepted
-  end
+  #   uri = URI.parse("http://79.111.122.45:88/front_bonuses/hs/bonuses/addSum")
+  #   http = Net::HTTP.new(uri.host,uri.port)
+  #   #https.use_ssl = true
+  #   req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
+  #   req.basic_auth 'otklik1c', '123456'
+  #   #req['foo'] = 'bar'
+  #   req.body = "#{@toSend}"
+  #   puts "#{req.body}"
+  #   res = http.request(req)
+  #   @some = "Response #{res.code} #{res.message}: #{res.body}"    
+  # end
 
-  def add
-    #000807 - real number
-    @toSend = {
-      "cardId"=>"#{params[:card_id]}",
-      "sum"=>params[:sum].to_i
-    }.to_json
-
-    uri = URI.parse("http://79.111.122.45:88/front_bonuses/hs/bonuses/addSum")
-    http = Net::HTTP.new(uri.host,uri.port)
-    #https.use_ssl = true
-    req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
-    req.basic_auth 'otklik1c', '123456'
-    #req['foo'] = 'bar'
-    req.body = "#{@toSend}"
-    puts "#{req.body}"
-    res = http.request(req)
-    @some = "Response #{res.code} #{res.message}: #{res.body}"    
-  end
-
-  def prize
-    params[:bonuse] = params
-    user_source = current_user
-    user_distantion = User.where( card: bonuse_params[:card] ).first
+  # def prize
+  #   params[:bonuse] = params
+  #   user_source = current_user
+  #   user_distantion = User.where( card: bonuse_params[:card] ).first
     
-    respond_to do |format|
-      if user_source.bonuses < bonuse_params[:count].to_i # and user_source.card != bonuse_params[:card]
-        #format.html { render :edit }
-        format.json { render json: { error: 'Ошибка бонусной системы'}, status: :unprocessable_entity }
-      else
-        user_distantion.inc( bonuses: bonuse_params[:count].to_i)
-        user_source.inc( bonuses: bonuse_params[:count].to_i*-1)
+  #   respond_to do |format|
+  #     if user_source.bonuses < bonuse_params[:count].to_i # and user_source.card != bonuse_params[:card]
+  #       #format.html { render :edit }
+  #       format.json { render json: { error: 'Ошибка бонусной системы'}, status: :unprocessable_entity }
+  #     else
+  #       user_distantion.inc( bonuses: bonuse_params[:count].to_i)
+  #       user_source.inc( bonuses: bonuse_params[:count].to_i*-1)
 
-        #format.html { redirect_to current_user, notice: 'Bonuse was successfully prized' }
-        format.json { render :show, status: :ok}
-      end
-    end
-  end
+  #       #format.html { redirect_to current_user, notice: 'Bonuse was successfully prized' }
+  #       format.json { render :show, status: :ok}
+  #     end
+  #   end
+  # end
 
   # GET /bonuses
   # GET /bonuses.json

@@ -50,9 +50,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       unless is_card_current_user? 
-        params[:user][:card] = ''
+        # Сбросить если введеная карта не принадлежит пользователю 
+        params[:user][:card] = '' 
         card_status = "Указанная карта не принадлежит Вам. Оставте поле карты пустым или введите корректный номер"
-      end if user_params[:card] != '' and user_params[:card] != ''
+      end if user_params[:card] != ''
 
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'Данные пользователя успешно обновленны. '+card_status }
@@ -86,6 +87,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:fio, :email, :phone, :card, :image, :role, :bonuses, :percent,:hb )
+      params.require(:user).permit(:fio, :email, :phone, :card, :image, :role, :bonuses, :percent, :hb )
     end
 end

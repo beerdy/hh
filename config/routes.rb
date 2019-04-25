@@ -37,14 +37,16 @@ Rails.application.routes.draw do
 
   resources :bonuses do
     collection do
-      get :get
-      get :add
+      #get :get
+      #get :add
+      post :move
     end
   end
-  get  'bonuses/prize/:card_id',    to: 'bonuses#get'
-  get  'bonuses/add/:card_id/:sum', to: 'bonuses#add'
-  post 'bonuses/move_bonuses',  controller: 'bonuses', action: 'move_bonuses',  as: "move_bonuses"
-  post 'bonuses/prize', controller: 'bonuses', action: 'prize', as: "bonuses_prize"        # for admin
+  
+  #get  'bonuses/prize/:card_id',    to: 'bonuses#get'
+  #get  'bonuses/add/:card_id/:sum', to: 'bonuses#add'
+  #post 'bonuses/move',  controller: 'bonuses', action: 'move',  as: "move"
+  #post 'bonuses/prize', controller: 'bonuses', action: 'prize', as: "bonuses_prize"        # for admin
     
   post   'cart_item/add',    controller: 'carts',  action: 'add',       as: "cart_item_add"            # add position by id and count in post request
   delete 'cart_item/delete', controller: 'carts',  action: 'delete',    as: "cart_item_delete" # delete position by id all quantify
