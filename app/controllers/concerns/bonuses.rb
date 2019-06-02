@@ -122,14 +122,14 @@ module Bonuses
       end
     end
 
-    def init_card_data
-      @data_1C["bonusSum"]
-      case card_type
-       when 'bonuses'
+    # def init_card_data
+    #   @data_1C["bonusSum"]
+    #   case card_type
+    #    when 'bonuses'
          
-       end 
-        @data_1C["bonusSum"] = @data_1C["bonusSum"].to_i
-      else
-        @data_1C["percentSum"] = get_percent_from_bonus_filed @data_1C["bonusSum"]
-    end
+    #    end 
+    #     @data_1C["bonusSum"] = @data_1C["bonusSum"].to_i
+    #   else
+    #     @data_1C["percentSum"] = get_percent_from_bonus_filed @data_1C["bonusSum"]
+    # end
 end

@@ -40,7 +40,8 @@ class User
 
   has_many :reviews, dependent: :destroy
   has_many :reservations, dependent: :destroy
-
+  has_many :histories, dependent: :destroy
+  
   validates :card, uniqueness: true, :unless => :card_nil? 
 
   ## Trackable

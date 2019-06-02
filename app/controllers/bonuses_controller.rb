@@ -164,7 +164,9 @@ class BonusesController < ApplicationController
   private
     # History send balls
     def add_to_history toSend
-      History.create(toSend.merge!({ :time => Time.now.to_i })).save
+      puts 'add histories'
+      result = History.create(toSend.merge!({ :time => Time.now.to_i, :user_id => current_user.id })).save
+      pp result
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_bonuse

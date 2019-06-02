@@ -5,33 +5,31 @@ class HistoriesController < ApplicationController
   # GET /histories
   # GET /histories.json
   def index
-    unless current_user.admin? then redirect_to root_path; return false; end
-    
-    @histories = History.all
+    if current_user.admin?
+      @histories = History.all
+    else
+      @histories = History.where( :user_id => current_user.id )
+    end
   end
 
   # GET /histories/1
   # GET /histories/1.json
   def show
-    unless current_user.admin? then redirect_to root_path; return false; end
   end
 
   # GET /histories/new
   def new
-    unless current_user.admin? then redirect_to root_path; return false; end
-    
     @history = History.new
   end
 
   # GET /histories/1/edit
   def edit
+    unless current_user.admin? then redirect_to root_path; return false; end
   end
 
   # POST /histories
   # POST /histories.json
   def create
-    unless current_user.admin? then redirect_to root_path; return false; end
-    
     @history = History.new(history_params)
 
     respond_to do |format|

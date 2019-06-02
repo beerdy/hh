@@ -14,6 +14,8 @@ class History
   field :cardIdFrom, type: String
   field :cardIdTo,   type: String
   field :sum,        type: Integer
-
   field :time, type: Integer
+  field :user_id, type: BSON::ObjectId
+
+  belongs_to :user
 end
