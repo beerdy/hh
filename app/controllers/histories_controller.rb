@@ -5,16 +5,21 @@ class HistoriesController < ApplicationController
   # GET /histories
   # GET /histories.json
   def index
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @histories = History.all
   end
 
   # GET /histories/1
   # GET /histories/1.json
   def show
+    unless current_user.admin? then redirect_to root_path; return false; end
   end
 
   # GET /histories/new
   def new
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @history = History.new
   end
 
@@ -76,6 +81,6 @@ class HistoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def history_params
-      params.require(:history).permit(:title, :description, :slave, :image, :link, :tag, :url, :link, :sort, :count)
+      params.require(:history).permit(:cardIdFrom, :cardIdTo, :sum, :time)
     end
 end

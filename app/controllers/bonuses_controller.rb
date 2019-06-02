@@ -38,12 +38,12 @@ class BonusesController < ApplicationController
     elsif @data_1C["bonusSum"] < params[:count].to_i
       render json: { status: 'notenough' }, status: :accepted
     else
-      @toSend = {
+      toSend = {
         "cardIdFrom" => card_src,
         "cardIdTo"   => card_dst,
         "sum"        => params[:count].to_i
-      }.to_json
-
+      }
+      @toSend = toSend.to_json
       uri = URI.parse("http://79.111.122.45:88/front_bonuses/hs/bonuses/moveSum")
       http = Net::HTTP.new(uri.host,uri.port)
       #https.use_ssl = true
@@ -54,6 +54,7 @@ class BonusesController < ApplicationController
       res = http.request(req)
       #{}"Response #{res.code} #{res.message}: #{res.body}"
       if res.code.to_i == 200
+        add_to_history toSend
         status = 'ok'
       else
         status = 'errorservice'
@@ -161,6 +162,10 @@ class BonusesController < ApplicationController
   end
 
   private
+    # History send balls
+    def add_to_history toSend
+      History.create(toSend.merge!({ :time => Time.now.to_i })).save
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_bonuse
       @bonuse = Bonuse.find(params[:id])

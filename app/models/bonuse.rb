@@ -7,4 +7,6 @@ class Bonuse
   field :birthday, type: String
 
   field :bonuses, type: Array, default: []
+
+  belongs_to :user
 end
