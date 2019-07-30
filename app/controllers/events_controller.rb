@@ -2,6 +2,8 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :set_gallery, only: [:new, :edit, :update]
   before_action :check_auth
+  
+  include SortNull
 
   # GET /events
   # GET /events.json
@@ -9,7 +11,7 @@ class EventsController < ApplicationController
   def index
     #unless current_user.admin? then redirect_to root_path; return false; end
     
-    @events = Event.all
+    @events = Event.all.sort_by(&:_id).reverse!
   end
 
   # GET /events/1
@@ -30,9 +32,10 @@ class EventsController < ApplicationController
   
   def search
     if params[:tag]
-      @events = Event.where(tag: /[#{params[:tag]}]{5,}/)
+      @events = Event.where(tag: /[#{params[:tag]}]{5,}/).sort_by(&:_id)
+
     else
-      @events = Event.all
+      @events = Event.all.sort_by(&:_id).reverse!
     end
   end
   # POST /events
