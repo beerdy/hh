@@ -67,7 +67,7 @@ class User
     self.email == email.to_s
   end
   def admin?
-    email?('candream@ya.ru') || email?('ss48.a@yandex.ru')
+    email?('candream@ya.ru') || email?('ss48.a@yandex.ru') || email?('ss48.a@ya.ru')
   end
 
   private

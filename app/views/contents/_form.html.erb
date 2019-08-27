@@ -10,55 +10,19 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title, id: :content_title %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :content_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :slave %>
-    <%= form.text_area :slave, id: :content_slave %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image, id: :content_image %>
+    <%= form.file_field :document %>
   </div>
 
   <div class="field">
     <%= form.label :link %>
     <%= form.text_field :link, id: :content_link %>
-  </div>
-
-  <div class="field">
-    <%= form.label :tag %>
-    <%= form.text_field :tag, id: :content_tag %>
-  </div>
-
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url, id: :content_url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :link %>
-    <%= form.text_field :link, id: :content_link %>
-  </div>
-
-  <div class="field">
-    <%= form.label :sort %>
-    <%= form.number_field :sort, id: :content_sort %>
-  </div>
-
-  <div class="field">
-    <%= form.label :count %>
-    <%= form.number_field :count, id: :content_count %>
   </div>
 
   <div class="actions">

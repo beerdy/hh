@@ -1,6 +1,7 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
   before_action :check_auth
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :new]
 
   # GET /contents
   # GET /contents.json
@@ -76,6 +77,6 @@ class ContentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def content_params
-      params.require(:content).permit(:title, :description, :slave, :image, :link, :tag, :url, :link, :sort, :count)
+      params.require(:content).permit(:title, :description, :slave, :image, :link, :tag, :url, :link, :sort, :count, :document)
     end
 end
