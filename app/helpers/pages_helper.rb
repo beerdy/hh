@@ -1,5 +1,11 @@
 module PagesHelper
   def show_file type
-    @document ||= Content.find_by link: type
+    if @document
+      document  = @document
+      @document = nil
+      return document
+    end
+
+    @document = Content.find_by link: type
   end
 end
