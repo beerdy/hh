@@ -6,6 +6,6 @@ ActionMailer::Base.smtp_settings = {
   port: 465,
   domain: 'yandex.ru',
   authentication: 'plain',
-  user_name: 'hmel.house@yandex.ru',
+  user_name: 'hmel.house@yandex.com',
   password: Rails.application.secrets.yandex_mail
 }

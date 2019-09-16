@@ -1,14 +1,14 @@
 class UserMailer < ApplicationMailer
-  default from: 'From site <hmel.house@yandex.ru>'
+  default from: 'From site <hmel.house@yandex.com>'
 
   def reservation_email(reservation)
     @reservation = reservation
-    @url = 'http://app.hmelhaus.ru'
-    mail(to: 'ss48.a@yandex.ru,reservation@hmelhaus.ru', subject: "RESERVATION - #{@url}" )
+    @url = 'https://hmelhaus.ru'
+    mail(to: 'reservation@hmelhaus.ru,a.kolosova@hmelhaus.ru,ss48.a@yandex.ru,candream@yandex.ru', subject: "RESERVATION - #{@url}" )
   end
   def review_email(review)
     @review = review
-    @url = 'http://app.hmelhaus.ru'
-    mail(to: 'ss48.a@yandex.ru,reservation@hmelhaus.ru', subject: "REVIEW - #{@url}" )
+    @url = 'https://hmelhaus.ru'
+    mail(to: 'reservation@hmelhaus.ru,a.kolosova@hmelhaus.ru,ss48.a@yandex.ru,candream@yandex.ru', subject: "REVIEW - #{@url}" )
   end
 end
