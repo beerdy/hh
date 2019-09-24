@@ -858,6 +858,7 @@ option, select{
 				background: #000;
 				float:left;
 				border-radius: 3px;
+				background-size: cover;
 			}
 				.table .iteam .photo{
 					position: relative;
@@ -878,33 +879,7 @@ option, select{
 					height: 150px;
 					box-shadow: inset 0px 0 30px rgba(0,0,0,1);
 				}
-					.table .iteam .photo .time_box{
-						position: absolute;
-						top:0;
-						left:0;
-						margin:25%;
-						width:50%;
-						height:50%;
-						background: #f1c854;
-						color:#000;
-						font-size: 30px;
-						line-height: 30px; 
-						text-align: center;
-						font-weight: bold;
-						padding: 13px;
-						box-sizing: border-box;
-						border-radius: 3px;
-					}
-					.table .iteam .photo .time_box span{
-						display:  block;
-						color:#000;
-						font-size: 16px;
-						line-height: 16px;
-						text-align: center;
-						font-weight: bold;
-						text-transform: uppercase;
-						letter-spacing: 2px;
-					}
+
 
 			.table .iteam .title{
 				position: absolute;
@@ -913,19 +888,36 @@ option, select{
 				padding:0 20px 0 160px;
 				box-sizing: border-box;
 			}
+			.table .iteam .time{
+				width:100px;
+				display: block;		
+				background: #f1c854;
+				color:#000;
+				font-size: 14px;
+				line-height: 18px; 
+				text-align: center;
+				font-weight: bold;
+				padding: 5px;
+				box-sizing: border-box;
+				border-radius: 3px;
+				margin:0 0 5px 0;
+			}
+			.table .iteam .tags{
+				position: absolute;
+				bottom:0;
+				left:0;
+				text-align: center;
+				padding:0 0 20px 160px;
+				margin: 20px auto 0;
+				letter-spacing: 1px;
+				color:#f1c854;
+			}
 				.table .iteam .title .desc{
 					font-size: 13px;
 					font-weight: normal;
 					color: #fff;
 				}
 
-			.table .iteam .time{
-				position: absolute;
-				bottom:20px;
-				left:0;
-				padding:0 20px 0 160px;
-				box-sizing: border-box;
-			}
 
 			.table .iteam .price{
 				position: absolute;
@@ -997,14 +989,7 @@ option, select{
 		font-weight: bold;
 		color:#f1c854;
 	}
-	.news .tags{
-		text-align: center;
-		margin: 20px auto 0;
-		font-size: 18px;
-		letter-spacing: 1px;
-		font-weight: bold;
-		color:#f1c854;
-	}
+
 
 .search {
 		position: relative;
