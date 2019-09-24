@@ -15,15 +15,17 @@
 
 <div class="table">
     <% @events.each do |event| %>
-       <div class="iteam">
-        <%= link_to event do %>
-          <div class="photo"><%= image_tag (has_image?(event.photos[0]) ? get_image(event.photos[0]).image.url(:thumb) : 'backgrounds/no-image320x240.png'), height: '150'%><div class="time_box"><%= event.id.generation_time.day %><span>/<%= event.id.generation_time.month %></span></div></div>
-          <div class="title"><h3><%= event.title %></h3></div>
-          <div class="time"><%= event.id.generation_time.day %>.<%= event.id.generation_time.month %>.<%= event.id.generation_time.year %>, <%= event.tag %>
-          </div>
-        <% end %>
-        </a>
+      <div class="iteam">
+    <%= link_to bavaria do %>
+      <div class="photo"><%= image_tag (has_image?(bavaria.photos[0]) ? get_image(bavaria.photos[0]).image.url(:thumb) : 'backgrounds/no-image320x240.png'), height: '150'%></div>
+      <div class="title">
+        <div class="time"><%= bavaria.id.generation_time.day %>.<%= bavaria.id.generation_time.month %>.<%= bavaria.id.generation_time.year %></div>
+         <h3><%= bavaria.title %></h3>
       </div>
+      <div class="tags"><%= bavaria.tag %></div>
+    <% end %>
+    </a>
+  </div>
     <% end %>
 </div>
 </table>
