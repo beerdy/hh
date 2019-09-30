@@ -1,5 +1,9 @@
 class Reservation
   include Mongoid::Document
+  field :date, type: String
+  field :time, type: String
+  field :room, type: String
+  field :person, type: Integer
   field :name, type: String
   field :phone, type: String
   field :email, type: String

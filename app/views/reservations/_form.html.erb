@@ -10,8 +10,43 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="row">
+    <div class="col-6">
+      <div class="field">
+        <%= form.label :date %>
+        <%= form.text_field :date, id: :reservation_date, class: 'datepicker-block' %>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="field">
+        <%= form.label :time %>
+        <%= form.text_field :time, id: :reservation_time, class: 'timepicker-block' %>
+      </div>
+    </div>
+  </div>
 
-  <div class="field">
+  <div class="row">
+    <div class="col-6">
+      <div class="field">
+        <%= form.label :room %>
+        <select>
+          <option selected="selected">Дорадо</option>
+          <option>Бавария</option>
+          <option>Веранда</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="field">
+        <%= form.label :person %>
+        <%= form.number_field :person, id: :reservation_person, class: 'person-count',  min: 1, max: 99 %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="field"> 
     <%= form.label :name %>
     <%= form.text_field :name, id: :reservation_name %>
   </div>

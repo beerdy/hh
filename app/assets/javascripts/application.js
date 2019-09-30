@@ -17,6 +17,9 @@
 //= require cart
 
 //= require ckeditor/init
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.ru.js
+//= require jquery.timepicker.js
 
 //
 //--- Static libs --///

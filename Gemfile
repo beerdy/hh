@@ -33,6 +33,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-timepicker-rails'
+gem 'jquery-timepicker-rails'
+
 gem "rails-backbone"
 
 gem 'mongoid', '~> 6.0'

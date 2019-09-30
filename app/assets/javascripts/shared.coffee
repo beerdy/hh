@@ -19,3 +19,15 @@ document.addEventListener "turbolinks:load", () ->
   # dropzone discover for turbolinks
   Dropzone.discover()
   # END dropzone discover for turbolinks
+      
+  $('.datepicker-block').datepicker 
+    language: 'ru-RU'
+    autoclose: true
+
+  $('.timepicker-block').timepicker
+    lang: { am: '', pm: '', AM: '', PM: '', decimal: '.', mins: 'мин.', hr: 'ч', hrs: 'hrs' }
+    minTime: "08:00", 
+    maxTime: "22:00",
+    show24Hours: true,
+    timeFormat: 'H:i'
+    step: 60

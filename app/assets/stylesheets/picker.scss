@@ -1,0 +1,19 @@
+// shared
+.ui-timepicker-list, .datepicker {
+  background: rgba(0, 0, 0, 0.75); 
+}
+
+// datepicker
+.datepicker {
+  position: absolute;
+}
+
+// timepicker
+.ui-timepicker-wrapper { 
+  background: none;
+  border: 0px;
+
+  .ui-timepicker-list li {
+    color: #fff;
+  }
+}

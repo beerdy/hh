@@ -1752,3 +1752,15 @@ img.tobig:hover{
 	    left: 230px;
 	}
 }
+
+// beerdy
+.col-6 {
+  width: 50%;
+  float: left;
+  .field:first-child {
+    padding-right: 4px;
+  }
+  .field:last-child {
+    padding-left: 4px;
+  }
+}
