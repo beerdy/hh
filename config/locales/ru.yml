@@ -24,10 +24,10 @@ ru:
         card: 'Ката лояльности'
         password_confirmation: 'Еще раз пароль'
       reservation:
-        date: 'Дата посещения'
-        time: 'Время посещения'
+        date: 'Дата'
+        time: 'Время'
         room: 'Зал'
-        person: 'Количество персон'
+        person: 'Персон'
         name: "Ваше Имя"
         email: "Ваш Email"
         phone: 'Ваш Телефон'

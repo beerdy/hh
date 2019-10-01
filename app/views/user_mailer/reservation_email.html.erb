@@ -7,7 +7,9 @@
     <ul>
     <li><strong>Заказ сделал: </strong> <%=  @reservation.name %></li>
     <li><strong>Телефон: </strong> <%=  @reservation.phone %></li>
-    <li><strong>Email: </strong> <%=  @reservation.email %></li>
+    <li><strong>Дата и время посещения: </strong> <%=  @reservation.date %> в <%=  @reservation.time %></li>
+    <li><strong>Зал: </strong> <%=  @reservation.room %></li>
+    <li><strong>Количество гостей: </strong> <%=  @reservation.person %></li>
     <li><strong>Описание заказа: </strong> <%=  @reservation.description %></li>
     <li><strong>Верификационный номер пользователя (для администратора ХХ): </strong> <%=  @reservation.user_id %></li>
     </ul>

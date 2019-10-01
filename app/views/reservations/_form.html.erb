@@ -11,41 +11,6 @@
     </div>
   <% end %>
   
-  <div class="row">
-    <div class="col-6">
-      <div class="field">
-        <%= form.label :date %>
-        <%= form.text_field :date, id: :reservation_date, class: 'datepicker-block' %>
-      </div>
-    </div>
-    <div class="col-6">
-      <div class="field">
-        <%= form.label :time %>
-        <%= form.text_field :time, id: :reservation_time, class: 'timepicker-block' %>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-6">
-      <div class="field">
-        <%= form.label :room %>
-        <select>
-          <option selected="selected">Дорадо</option>
-          <option>Бавария</option>
-          <option>Веранда</option>
-        </select>
-      </div>
-    </div>
-    <div class="col-6">
-      <div class="field">
-        <%= form.label :person %>
-        <%= form.number_field :person, id: :reservation_person, class: 'person-count',  min: 1, max: 99 %>
-      </div>
-    </div>
-  </div>
-
-
   <div class="field"> 
     <%= form.label :name %>
     <%= form.text_field :name, id: :reservation_name %>
@@ -56,16 +21,33 @@
     <%= form.text_field :phone, id: :reservation_phone %>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :reservation_email %>
+  <div class="fields">
+    <div class="field50">
+      <%= form.label :date %>
+      <%= form.text_field :date, id: :reservation_date, class: 'datepicker-block' %>
+    </div>
+
+    <div class="field50">
+      <%= form.label :time %>
+      <%= form.text_field :time, id: :reservation_time %>
+    </div>
+  </div>
+
+  <div class="fields">
+    <div class="field50">
+      <%= form.label :room %>
+      <%= form.select(:room, options_for_select([['Дорадо', 'Дорадо'], ['Бавария', 'Бавария'], ['Веранда', 'Веранда']], 2)) %>
+    </div>
+    <div class="field50">
+      <%= form.label :person %>
+      <%= form.number_field :person, id: :reservation_person, class: 'person-count',  min: 1, max: 99 %>
+    </div>
   </div>
 
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description, id: :reservation_description %>
   </div>
-
 
   <div class="actions">
     <%= form.submit 'Забронировать' %>

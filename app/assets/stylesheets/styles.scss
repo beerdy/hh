@@ -192,6 +192,20 @@ input[type="text"], input[type="password"], input[type="email"], input[type="tel
 	color:#fff;
 	letter-spacing: 1px;
 }
+
+.fields50 option, .fields50 select{
+	width:100%;
+	margin:5px 0 5px 0;
+	border:1px solid #000;
+	font-size: 16px;
+	background:rgba(0,0,0,0.5);
+	font-weight: 300;
+	padding: 20px 10px 20px 10px;
+	box-sizing: border-box;
+	color:#fff;
+	letter-spacing: 1px;
+}
+
 textarea{
 	width:100%;
 	max-width:960px;
@@ -244,6 +258,19 @@ option, select{
     color: #000;
     border-radius: 3px;
     border:0px;
+}
+
+.field50 option, .field50 select{
+	width:100%;
+	margin:5px 0 5px 0;
+	border:1px solid #000;
+	font-size: 16px;
+	background:rgba(0,0,0,0.5);
+	font-weight: 300;
+	padding: 20px 10px 20px 10px;
+	box-sizing: border-box;
+	color:#fff;
+	letter-spacing: 1px;
 }
 
 /*МЕНЮ*/
@@ -573,12 +600,36 @@ option, select{
 	    	max-width: 600px;
 	    	box-sizing:border-box;
 	    	margin: 0 auto 10px;
+	    	padding:10px;
 		}
 			.content .field label{
 				text-transform: uppercase;
 				letter-spacing: 2px;
 		    	font-weight: 800;
 			}
+
+		.content .fields{
+	    	max-width: 600px;
+	    	box-sizing:border-box;
+	    	margin: 0 auto 10px;
+	    	padding:10px;
+	    	overflow: hidden;
+		}
+
+			.content .field50{
+		    	width:50%;
+		    	max-width: 600px;
+		    	box-sizing:border-box;
+		    	margin: 0 auto 10px;
+		    	float:left;
+		    	padding:10px;
+			}
+				.content .field50 label{
+					text-transform: uppercase;
+					letter-spacing: 2px;
+			    	font-weight: 800;
+				}
+
 .header{
 	overflow: hidden;
 	widows: 100%;
