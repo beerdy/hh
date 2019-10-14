@@ -8,8 +8,14 @@
 <p>Пиво с нашей пивоварни оценено не только постоянными гостями, но и престижными международными выставками с присвоением золотых медалей. Вас так же порадует интересное меню, в котором сочетаются блюда европейкой и русской кухни.</p>
 </div>
 <div class="menu">
-    <%= link_to "ОСН. МЕНЮ",    show_file('bavaria-main').document.url,   title: show_file('bavaria-main').title %>    
-    <%= link_to "ДЕТСКОЕ МЕНЮ", show_file('bavaria-child').document.url,  title: show_file('bavaria-child').title %>
+    <% file = show_file('bavaria-main') %>
+    <%= link_to "ОСН. МЕНЮ",    file.document.url, title: file.title if file %>    
+    <% file = show_file('child') %>
+    <%= link_to "ДЕТСКОЕ МЕНЮ", file.document.url, title: file.title if file %>
+</div>
+<div class="menu">
+    <% file = show_file('newyear') %>
+    <%= link_to "НОВОГОДНЕЕ МЕНЮ", file.document.url, title: file.title if file %>
 </div>
 <div class="photos">
           <div class="photo-iteam"><%= image_tag("b01.jpg", class: "tobig", alt: "") %></div>

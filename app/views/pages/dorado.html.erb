@@ -7,9 +7,18 @@
 <p>Приватность и элегантный уют в гармоничном сочетании с открытой кухней порадуют гостей первого этажа в зале средиземноморской кухни – «Дорадо». Свежие продукты, идеи, комбинации вкусов и изысканные их сочетания не оставят равнодушными ценителей блюд из морепродуктов.</p>
 </div>
 <div class="menu">
-    <%= link_to "ОСН. МЕНЮ",    show_file('dorado').document.url, title: show_file('dorado').title %>
-    <%= link_to "БАРНАЯ КАРТА", show_file('bar').document.url,    title: show_file('bar').title %>
-    <%= link_to "ДЕТСКОЕ МЕНЮ", show_file('child').document.url,  title: show_file('child').title %>
+    <% file = show_file('dorado-main') %>
+    <%= link_to "ОСН. МЕНЮ", file.document.url, title: file.title if file %>
+
+    <% file = show_file('dorado-bar') %>
+    <%= link_to "БАРНАЯ КАРТА", file.document.url, title: file.title if file %>
+
+    <% file = show_file('child') %>
+    <%= link_to "ДЕТСКОЕ МЕНЮ", file.document.url, title: file.title if file %>
+</div>
+<div class="menu">
+    <% file = show_file('newyear') %>
+    <%= link_to "НОВОГОДНЕЕ МЕНЮ", file.document.url, title: file.title if file %>
 </div>
 <div class="photos">
     <div class="photo-iteam"><%= image_tag("d01.jpg", class: "tobig", alt: "") %></div>
