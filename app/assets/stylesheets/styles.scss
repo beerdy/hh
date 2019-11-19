@@ -1226,7 +1226,7 @@ option, select{
 		  z-index: 5;
 		  margin: 10px 0 0 0;
 		}
-		.content .menu{
+		.content .menu, .content .menu2{
 			overflow: hidden;
 			width:100%;
 			max-width: 1200px;
@@ -1234,6 +1234,28 @@ option, select{
 			text-align: center;
 		}
 			.content .menu a{
+				width:250px;
+				display: inline-block;
+			    font-size: 16px;
+			    line-height: 50px;
+			    font-weight: 600;
+			    text-transform: uppercase;
+			    letter-spacing: 2px;
+			    text-decoration: none;
+			    color: #fff;
+			    background-repeat: no-repeat;
+			    background-position: left center;
+			    background-size: 32px;
+			    padding: 0px 0 0px 50px;
+				background: image-url('ico_menu_.svg') no-repeat center;
+				background-size:50px;
+				background-position: left center;
+				box-sizing: border-box;
+				margin:10px 0 10px 0;
+				text-align: left;
+		}
+
+		.content .menu2 a{
 				width:250px;
 				display: inline-block;
 			    font-size: 16px;
@@ -1254,6 +1276,7 @@ option, select{
 				margin:10px 0 10px 0;
 				text-align: left;
 		}
+
 .classictable{
 	width:100%;
 	max-width: 1200px;
