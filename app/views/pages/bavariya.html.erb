@@ -19,7 +19,9 @@
 </div>
 <div class="menu">
     <% file = show_file('newyear') %>
-    <%= link_to "НОВОГОДНЕЕ МЕНЮ", file.document.url, title: file.title if file %>
+    <%= link_to "МЕНЮ «НОВОГОДНИЕ КОРПОРАТИВЫ»", file.document.url, title: file.title if file %>
+    <% file = show_file('newyear2') %>
+    <%= link_to "МЕНЮ «НОВОГОДНЯЯ НОЧЬ»", file.document.url, title: file.title if file %>
 </div>
 <div class="photos">
           <div class="photo-iteam"><%= image_tag("b01.jpg", class: "tobig", alt: "") %></div>
