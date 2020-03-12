@@ -15,7 +15,10 @@
     <%= link_to "ДЕТСКОЕ МЕНЮ", file.document.url, title: file.title if file %>
     
     <% file = show_file('bavaria-lanch') %>
-    <%= link_to "ЛАНЧ",    file.document.url, title: file.title if file %>  
+    <%= link_to "ЛАНЧ",    file.document.url, title: file.title if file %>
+    
+    <% file = show_file('bavaria-post') %>
+    <%= link_to file.title.upcase,    file.document.url, title: file.title if file %>  
 </div>
 <div class="menu2">
     <% file = show_file('newyear') %>
