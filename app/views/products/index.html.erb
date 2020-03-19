@@ -15,7 +15,9 @@
       </div>
       <% end %>
     </div>
-    <%= link_to 'Новый продукт', new_product_path, class: 'button' %>
+    <% if user_signed_in? %>
+      <%= link_to 'Новый продукт', new_product_path, class: 'button' %>
+    <% end %>
   </div> 
   <%= render partial: 'application/footer', locals: {var1:"123", var2:"123"}%>
 </section>
