@@ -1,6 +1,7 @@
 class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_auth
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :new]
   # GET /menus
   # GET /menus.json
   def index
@@ -24,6 +25,8 @@ class MenusController < ApplicationController
   # POST /menus
   # POST /menus.json
   def create
+    unless current_user.admin? then redirect_to root_path; return false; end
+
     @menu = Menu.new(menu_params)
 
     respond_to do |format|
@@ -40,6 +43,8 @@ class MenusController < ApplicationController
   # PATCH/PUT /menus/1
   # PATCH/PUT /menus/1.json
   def update
+    unless current_user.admin? then redirect_to root_path; return false; end
+
     respond_to do |format|
       if @menu.update(menu_params)
         format.html { redirect_to @menu, notice: 'Menu was successfully updated.' }
@@ -54,6 +59,8 @@ class MenusController < ApplicationController
   # DELETE /menus/1
   # DELETE /menus/1.json
   def destroy
+    unless current_user.admin? then redirect_to root_path; return false; end
+    
     @menu.destroy
     respond_to do |format|
       format.html { redirect_to menus_url, notice: 'Menu was successfully destroyed.' }
