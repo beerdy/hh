@@ -7,6 +7,11 @@
 <p>Приватность и элегантный уют в гармоничном сочетании с открытой кухней порадуют гостей первого этажа в зале средиземноморской кухни – «Дорадо». Свежие продукты, идеи, комбинации вкусов и изысканные их сочетания не оставят равнодушными ценителей блюд из морепродуктов.</p>
 </div>
 <div class="menu">
+    <% Menu.where( url: action_name ).each do |menu| %>
+      <% file = show_file( menu.link ) %>
+      <%= link_to menu.title,    file.document.url, title: file.title if file %>   
+    <% end %>
+
     <% file = show_file('dorado-main') %>
     <%= link_to "ОСН. МЕНЮ", file.document.url, title: file.title if file %>
 

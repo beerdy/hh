@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @menu.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @menu.description %>
+</p>
+
+<p>
+  <strong>Slave:</strong>
+  <%= @menu.slave %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @menu.link %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @menu.url %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @menu.sort %>
+</p>
+
+<p>
+  <strong>Show:</strong>
+  <%= @menu.show %>
+</p>
+
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>

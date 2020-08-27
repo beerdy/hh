@@ -8,6 +8,12 @@
 <p>Пиво с нашей пивоварни оценено не только постоянными гостями, но и престижными международными выставками с присвоением золотых медалей. Вас так же порадует интересное меню, в котором сочетаются блюда европейкой и русской кухни.</p>
 </div>
 <div class="menu">
+
+    <% Menu.where( url: action_name ).each do |menu| %>
+      <% file = show_file( menu.link ) %>
+      <%= link_to menu.title,    file.document.url, title: file.title if file %>   
+    <% end %>
+
     <% file = show_file('bavaria-main') %>
     <%= link_to "ОСН. МЕНЮ",    file.document.url, title: file.title if file %>   
 
